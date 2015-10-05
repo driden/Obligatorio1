@@ -37,6 +37,12 @@
     <Filter Include="Implementacion\TADS\Source\Comparadores">
       <UniqueIdentifier>{06d9e726-fdc6-4d65-93cf-e4f7aa91830d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Obligatorio\Src">
+      <UniqueIdentifier>{04f76454-fbad-4d35-9fb8-2c3d96dd84a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Obligatorio\Headers">
+      <UniqueIdentifier>{e7c4b910-95cd-48e8-8559-b67de9a9dd5a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasoDePrueba.cpp">
@@ -58,6 +64,15 @@
       <Filter>Implementacion\TADS\Source\AVL</Filter>
     </ClCompile>
     <ClCompile Include="ComparadorInt.cpp">
+      <Filter>Implementacion\TADS\Source\Comparadores</Filter>
+    </ClCompile>
+    <ClCompile Include="Barrio.cpp">
+      <Filter>Obligatorio\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Cliente.cpp">
+      <Filter>Obligatorio\Src</Filter>
+    </ClCompile>
+    <ClCompile Include="ComparadorCadena.cpp">
       <Filter>Implementacion\TADS\Source\Comparadores</Filter>
     </ClCompile>
   </ItemGroup>
@@ -93,6 +108,15 @@
       <Filter>Implementacion\TADS\Headers\AVL</Filter>
     </ClInclude>
     <ClInclude Include="ComparadorInt.h">
+      <Filter>Implementacion\TADS\Headers\Comparadores</Filter>
+    </ClInclude>
+    <ClInclude Include="Barrio.h">
+      <Filter>Obligatorio\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Cliente.h">
+      <Filter>Obligatorio\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ComparadorCadena.h">
       <Filter>Implementacion\TADS\Headers\Comparadores</Filter>
     </ClInclude>
   </ItemGroup>

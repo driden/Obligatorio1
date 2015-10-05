@@ -96,7 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AVLImp.cpp" />
+    <ClCompile Include="Barrio.cpp" />
     <ClCompile Include="CasoDePrueba.cpp" />
+    <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="ComparadorCadena.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
     <ClCompile Include="NodoAVL.cpp" />
     <ClCompile Include="PruebasMock.cpp" />
@@ -106,7 +109,10 @@
   <ItemGroup>
     <ClInclude Include="AVL.h" />
     <ClInclude Include="AVLImp.h" />
+    <ClInclude Include="Barrio.h" />
     <ClInclude Include="CasoDePrueba.h" />
+    <ClInclude Include="Cliente.h" />
+    <ClInclude Include="ComparadorCadena.h" />
     <ClInclude Include="ComparadorInt.h" />
     <ClInclude Include="NodoAVL.h" />
     <ClInclude Include="PruebasMock.h" />
