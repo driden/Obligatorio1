@@ -43,6 +43,9 @@
     <Filter Include="Obligatorio\Headers">
       <UniqueIdentifier>{e7c4b910-95cd-48e8-8559-b67de9a9dd5a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Implementacion\TADS\Headers\TablaHash">
+      <UniqueIdentifier>{56727d81-9c91-46f8-a287-3dd594ad0435}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasoDePrueba.cpp">
@@ -118,6 +121,12 @@
     </ClInclude>
     <ClInclude Include="ComparadorCadena.h">
       <Filter>Implementacion\TADS\Headers\Comparadores</Filter>
+    </ClInclude>
+    <ClInclude Include="TablaHash.h">
+      <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilidades.h">
+      <Filter>Obligatorio\Headers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
