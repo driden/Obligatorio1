@@ -101,7 +101,10 @@
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="ComparadorCadena.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
+    <ClCompile Include="HashImp.cpp" />
+    <ClCompile Include="ListaIteracion.cpp" />
     <ClCompile Include="NodoAVL.cpp" />
+    <ClCompile Include="NodoLista.cpp" />
     <ClCompile Include="PruebasMock.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Sistema.cpp" />
@@ -114,7 +117,11 @@
     <ClInclude Include="Cliente.h" />
     <ClInclude Include="ComparadorCadena.h" />
     <ClInclude Include="ComparadorInt.h" />
+    <ClInclude Include="HashImp.h" />
+    <ClInclude Include="Lista.h" />
+    <ClInclude Include="ListaIteracion.h" />
     <ClInclude Include="NodoAVL.h" />
+    <ClInclude Include="NodoLista.h" />
     <ClInclude Include="PruebasMock.h" />
     <ClInclude Include="ICliente.h" />
     <ClInclude Include="IBarrio.h" />

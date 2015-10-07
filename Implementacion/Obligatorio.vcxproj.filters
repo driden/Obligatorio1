@@ -37,14 +37,20 @@
     <Filter Include="Implementacion\TADS\Source\Comparadores">
       <UniqueIdentifier>{06d9e726-fdc6-4d65-93cf-e4f7aa91830d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Obligatorio\Src">
-      <UniqueIdentifier>{04f76454-fbad-4d35-9fb8-2c3d96dd84a3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Obligatorio\Headers">
-      <UniqueIdentifier>{e7c4b910-95cd-48e8-8559-b67de9a9dd5a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Implementacion\TADS\Headers\TablaHash">
       <UniqueIdentifier>{56727d81-9c91-46f8-a287-3dd594ad0435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacion\Dominio\Headers">
+      <UniqueIdentifier>{e7c4b910-95cd-48e8-8559-b67de9a9dd5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacion\Dominio\Src">
+      <UniqueIdentifier>{04f76454-fbad-4d35-9fb8-2c3d96dd84a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacion\TADS\Headers\Lista">
+      <UniqueIdentifier>{25b837ec-0677-4ebc-9d7c-fa80e8e276cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacion\TADS\Source\Lista">
+      <UniqueIdentifier>{92fd36f3-8876-488e-adf8-a728c02f08a0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -70,13 +76,22 @@
       <Filter>Implementacion\TADS\Source\Comparadores</Filter>
     </ClCompile>
     <ClCompile Include="Barrio.cpp">
-      <Filter>Obligatorio\Src</Filter>
+      <Filter>Implementacion\Dominio\Src</Filter>
     </ClCompile>
     <ClCompile Include="Cliente.cpp">
-      <Filter>Obligatorio\Src</Filter>
+      <Filter>Implementacion\Dominio\Src</Filter>
     </ClCompile>
     <ClCompile Include="ComparadorCadena.cpp">
       <Filter>Implementacion\TADS\Source\Comparadores</Filter>
+    </ClCompile>
+    <ClCompile Include="HashImp.cpp">
+      <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoLista.cpp">
+      <Filter>Implementacion\TADS\Source\Lista</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaIteracion.cpp">
+      <Filter>Implementacion\TADS\Source\Lista</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -114,10 +129,10 @@
       <Filter>Implementacion\TADS\Headers\Comparadores</Filter>
     </ClInclude>
     <ClInclude Include="Barrio.h">
-      <Filter>Obligatorio\Headers</Filter>
+      <Filter>Implementacion\Dominio\Headers</Filter>
     </ClInclude>
     <ClInclude Include="Cliente.h">
-      <Filter>Obligatorio\Headers</Filter>
+      <Filter>Implementacion\Dominio\Headers</Filter>
     </ClInclude>
     <ClInclude Include="ComparadorCadena.h">
       <Filter>Implementacion\TADS\Headers\Comparadores</Filter>
@@ -126,7 +141,19 @@
       <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
     </ClInclude>
     <ClInclude Include="Utilidades.h">
-      <Filter>Obligatorio\Headers</Filter>
+      <Filter>Implementacion</Filter>
+    </ClInclude>
+    <ClInclude Include="HashImp.h">
+      <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
+    </ClInclude>
+    <ClInclude Include="Lista.h">
+      <Filter>Implementacion\TADS\Headers\Lista</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaIteracion.h">
+      <Filter>Implementacion\TADS\Headers\Lista</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoLista.h">
+      <Filter>Implementacion\TADS\Headers\Lista</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
