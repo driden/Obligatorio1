@@ -102,6 +102,7 @@
     <ClCompile Include="ComparadorCadena.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
     <ClCompile Include="HashImp.cpp" />
+    <ClCompile Include="ListaEnlazada.cpp" />
     <ClCompile Include="ListaIteracion.cpp" />
     <ClCompile Include="NodoAVL.cpp" />
     <ClCompile Include="NodoLista.cpp" />
@@ -119,6 +120,7 @@
     <ClInclude Include="ComparadorInt.h" />
     <ClInclude Include="HashImp.h" />
     <ClInclude Include="Lista.h" />
+    <ClInclude Include="ListaEnlazada.h" />
     <ClInclude Include="ListaIteracion.h" />
     <ClInclude Include="NodoAVL.h" />
     <ClInclude Include="NodoLista.h" />

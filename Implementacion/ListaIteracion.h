@@ -2,15 +2,17 @@
 
 #include "Iteracion.h"
 #include "NodoLista.h"
+
 template<class T>
-class ListaIteracion<T> : public Iteracion<T>
+class ListaIteracion : Iteracion<T>
 {
 private:
 	Puntero<NodoLista<T>> _lista;
-	Puntero<Comparador<T>> _comp;
+	Puntero<NodoLista<T>> _inicio;
+	
 public:
 
-	ListaIteracion<T>(Puntero<NodoLista<T>> nodo, Puntero<Comparador<T>> comp);
+	ListaIteracion<T>(Puntero<NodoLista<T>> nodo);
 
 	~ListaIteracion<T>();
 
@@ -19,6 +21,12 @@ public:
 	void Avanzar() override;
 	void Reiniciar() override;
 
-	Puntero<Iteracion<T>> Clonar() const override
-	{ return nullptr; }
+	Puntero<Iteracion<T>> Clonar() const override;
+	//AUX
+	Puntero<NodoLista<T>> ClonarLista(const Puntero<NodoLista<T>> lista) const;
+
+	/*Puntero<NodoLista<T>> GetLista() const;
+	void SetInicioLista(const Puntero<NodoLista<T>> & l);*/
+
+
 };

@@ -1,22 +1,19 @@
 #pragma once
-#include "Puntero.h" 
+
+#include "Puntero.h"
 
 template <class T>
-class NodoLista < T >
+class NodoLista
 {
-private:
-	T& _dato;
+	T _dato;
 	Puntero<NodoLista<T>>& _sig;
-
 public:
-	NodoLista(const T& dato)
-	{
-		_dato = dato;
-		_sig = nullptr;
-	}
+	NodoLista<T>(const T& dato);
+	const T& GetDato();
+	const Puntero<NodoLista<T>> GetSiguiente();
+	void SetSiguiente(const Puntero<NodoLista<T>> sig);
 
-	T& GetDato();
-	Puntero<NodoLista<T>> GetSiguiente();
-	void SetSiguiente(const Puntero < NodoLista<T>> sig);
+	Puntero<NodoLista<T>> Clonar();
+
 
 };
