@@ -2,11 +2,16 @@
 #include "Puntero.h"
 #include "Iterable.h"
 #include "NodoLista.h"
+
 typedef unsigned int nat;
 
 template <class T>
 class Lista : public Iterable<T>
 {
+	public:
+	
+	~Lista() {}
+
 	virtual void Insertar(const T &x) abstract;
 
 	const virtual nat Largo() const abstract;

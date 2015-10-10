@@ -1,20 +1,26 @@
-#pragma once
+#ifndef LISTAENLAZADA_H
+#define LISTAENLAZADA_H
+
+
 #include "Lista.h"
-#include "ListaIteracion.h";
 
 template<class T>
 class ListaEnlazada : public Lista<T>
 {
 	nat cantElementos;
 	Puntero<NodoLista<T>> _lista;
-	Puntero<NodoLista<T>> _inicio;
-	Puntero<Comparador<T>> _comp;
+	Comparador<T> _comp;
 	Iterador<T> _iter;
 
-	
 	public:
 
-	ListaEnlazada(const Puntero<Comparador<T>> comp);
+	ListaEnlazada(const Comparador<T> comp)
+	{
+		_lista = nullptr;
+		_comp = comp;
+		cantElementos = 0;
+		_iter = nullptr;
+	}
 
 	void Insertar(const T &x) override;
 
@@ -29,6 +35,9 @@ class ListaEnlazada : public Lista<T>
 	Iterador<T> ObtenerIterador() const override;
 
 };
+#endif
+#include "ListaEnlazada.cpp"
+
 
 
 

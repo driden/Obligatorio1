@@ -1,28 +1,28 @@
-#pragma once
-#include "ListaEnlazada.h"
+#ifndef LISTAENLAZADA_CPP
+#define LISTAENLAZADA_CPP
 
-template <class T>
-ListaEnlazada<T>::ListaEnlazada(const Puntero<Comparador<T>> comp)
-{
-	this->_lista = nullptr;
-	this->_inicio = nullptr;
-	this->_comp = comp;
-	this->cantElementos = 0;
-	this->_iter = new ListaIteracion<T>(_inicio);
-}
+#include "ListaIteracion.h"
+#include "ListaEnlazada.h"
 
 template <class T>
 void ListaEnlazada<T>::Insertar(const T& x)
 {
-	Iterador<T> it = this->ObtenerIterador();
-	Puntero<NodoLista<T>> ant = nullptr;
-	while (it->HayElemento())
-	{
-		ant = it->GetLista();
-		it->Avanzar();
-	}
 	Puntero<NodoLista<T>> nuevo = new NodoLista<T>(x);
-	ant->SetSiguiente(nuevo);
+	if (_lista == nullptr)
+	{
+		_lista = nuevo;
+	}
+	else
+	{
+		Puntero<NodoLista<T>> aux = _lista;
+		Puntero<NodoLista<T>> anterior = aux;
+		while ( aux ->GetSiguiente() != nullptr)
+		{
+			anterior = aux;
+			aux = aux->GetSiguiente();
+		}
+		anterior->SetSiguiente(nuevo);
+	}
 	this->cantElementos = cantElementos + 1;
 }
 
@@ -37,19 +37,30 @@ void ListaEnlazada<T>::Eliminar(const T& x)
 {
 	if (Existe(x))
 	{
-		Iterador<T> it = this->ObtenerIterador();
-		Puntero<NodoLista<T>> ant = nullptr;
-		
-		while (_comp->SonDistintos(it.ElementoActual(),x))
+		//si es el primero
+		if (_comp.SonIguales(x, _lista->GetDato()))
 		{
-			ant = it->GetLista();
-			it->Avanzar();
+			Puntero<NodoLista<T>> aBorrar = _lista;
+			_lista = _lista->GetSiguiente();
+			aBorrar = nullptr;
+			//refresco iterador
+			_iter = new ListaIteracion<T>(_lista);
 		}
+		else
+		{
+			Iterador<T> it = ObtenerIterador();
+			Puntero<NodoLista<T>> aux = _lista;
+			Puntero<NodoLista<T>> ant = _lista;
 
-		Puntero<NodoLista<T>> aBorrar = it->GetLista();
-		ant->SetSiguiente(aBorrar->GetSiguiente());
-		
-		aBorrar = nullptr;
+			while (_comp.SonDistintos(it.ElementoActual(), x))
+			{
+				ant = aux;
+				aux = aux->GetSiguiente();
+			}
+			
+			ant->SetSiguiente(aux->GetSiguiente());
+			aux = nullptr;
+		}
 		this->cantElementos = cantElementos - 1;
 	}
 }
@@ -59,19 +70,20 @@ bool ListaEnlazada<T>::Existe(const T& x)
 {
 	bool existe = false;
 
-	if (_inicio != nullptr)
+	if (_lista != nullptr)
 	{
-		Iterador<T> it = this->ObtenerIterador();
+		Puntero<NodoLista<T>> itera = _lista;
 
-		while (it.HayElemento() && _comp->SonDistintos(it.ElementoActual(), x))
+		while (itera != nullptr && _comp.SonDistintos(itera->GetDato(), x))
 		{
-			it.Avanzar();
+			itera = itera->GetSiguiente();
 		}
 
-		if (it.HayElemento())
+		if (itera != nullptr)
 		{
 			existe = true;
 		}
+		itera = nullptr;
 	}
 	return existe;
 }
@@ -80,24 +92,22 @@ template <class T>
 Puntero<NodoLista<T>> ListaEnlazada<T>::Recuperar(const T& x)
 {
 	Puntero<NodoLista<T>> nodo = nullptr;
-	Iterador<T> it = this->ObtenerIterador();
+	Puntero<NodoLista<T>> itera = _lista;
 
 	if (Existe(x))
 	{
-		while (_comp->SonDistintos(it.ElementoActual(), x))
+		while (_comp.SonDistintos(itera->GetDato(), x))
 		{
-			it->Avanzar();
-		}
-		nodo = it->GetLista();
+			itera = itera->GetSiguiente();
+		}		
 	}
 
-	return nodo;
+	return itera;
 }
 
 template <class T>
 Iterador<T> ListaEnlazada<T>::ObtenerIterador() const
 {
-	_iter.Reiniciar();
-	return _iter;
+	return new ListaIteracion<T>(_lista);	
 }
-
+#endif

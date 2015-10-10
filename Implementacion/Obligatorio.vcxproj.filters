@@ -149,17 +149,17 @@
     <ClInclude Include="HashImp.h">
       <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
     </ClInclude>
-    <ClInclude Include="NodoLista.h">
-      <Filter>Implementacion\TADS\Headers\Lista</Filter>
-    </ClInclude>
-    <ClInclude Include="ListaIteracion.h">
-      <Filter>Implementacion\TADS\Headers\Lista</Filter>
-    </ClInclude>
     <ClInclude Include="Lista.h">
-      <Filter>Implementacion\TADS\Headers\Lista</Filter>
+      <Filter>Implementacion\TADS\Source\Lista</Filter>
     </ClInclude>
     <ClInclude Include="ListaEnlazada.h">
-      <Filter>Implementacion\TADS\Headers\Lista</Filter>
+      <Filter>Implementacion\TADS\Source\Lista</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaIteracion.h">
+      <Filter>Implementacion\TADS\Source\Lista</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoLista.h">
+      <Filter>Implementacion\TADS\Source\Lista</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
