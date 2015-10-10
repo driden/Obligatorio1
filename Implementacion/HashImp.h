@@ -3,28 +3,32 @@
 #include "TablaHash.h"
 #include "Array.h"
 #include "Tupla.h"
-#include "AVL.h"
+#include "Lista.h"
 #include "FuncionHash.h"
+#include "Utilidades.h"
+#include "Comparador.h"
 
 template <class Clave, class Valor>
-class HashImp
+class HashImp : public TablaHash<Clave, Valor>
 {
 private:
 	//HASH ABIERTO
-	Array<Tupla<Clave, AVL<Valor>>> _hash;
-	FuncionHash<nat> _funcionHash;
+	Array<Puntero<Lista<Valor>>> _hash;
+	Puntero<FuncionHash<Clave>> _funcionHash;
+	nat _largo;	
 public:
-	HashImp<Clave, Valor>(int const MAX_NUMBER);
+	~HashImp(){}
+	HashImp<Clave, Valor>(int const MAX_NUMBER, Puntero<FuncionHash<Clave>> funcion, Comparador<Valor> comp);
 	/* CONSTRUCTORAS */
-	virtual void Agregar(const Clave& c, const Valor& v);
-	virtual void Borrar(const Clave& c);
+	void Agregar(const Clave& c, const Valor& v) override;
+	void Borrar(const Clave& c) override;
 	/* PREDICADOS */
-	virtual bool EstaVacia() const;
-	virtual bool EstaLlena() const;
-	virtual bool Pertenece(const Clave& c) const;
+	bool EstaVacia() const override;
+	bool EstaLlena() const override;
+	bool Pertenece(const Clave& c) const override;
 	/* SELECTORAS */
-	virtual bool Obtener(const Clave& c, Valor& v) const;
-	virtual nat Largo() const;
+	bool Obtener(const Clave& c, Valor& v) const override;
+	nat Largo() const override;
 };
 #endif
 #include "HashImp.cpp"

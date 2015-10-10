@@ -101,7 +101,7 @@
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="ComparadorCadena.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
-    <ClCompile Include="FuncionClienteCI.cpp" />
+    <ClCompile Include="FuncionNat.cpp" />
     <ClCompile Include="HashImp.cpp" />
     <ClCompile Include="ListaEnlazada.cpp" />
     <ClCompile Include="ListaIteracion.cpp" />
@@ -119,7 +119,7 @@
     <ClInclude Include="Cliente.h" />
     <ClInclude Include="ComparadorCadena.h" />
     <ClInclude Include="ComparadorInt.h" />
-    <ClInclude Include="FuncionClienteCI.h" />
+    <ClInclude Include="FuncionNat.h" />
     <ClInclude Include="HashImp.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaEnlazada.h" />

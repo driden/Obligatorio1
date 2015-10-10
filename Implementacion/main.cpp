@@ -7,7 +7,9 @@
 #include "Utilidades.h"
 #include "ComparadorInt.h"
 #include "ListaEnlazada.cpp"
-
+#include "HashImp.h"
+#include "TablaHash.h"
+#include "CadenaFuncionHash.h"
 #include "NodoLista.h"
 Puntero<ISistema> Inicializar(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
@@ -39,43 +41,53 @@ void main()
 	Comparador<int> comp = new ComparadorInt();
 	Puntero<Lista<int>> lista = new ListaEnlazada<int>(comp);
 
+	//lista->Insertar(1);
+	//lista->Insertar(2);
+	//lista->Insertar(3);
+	//lista->Insertar(4);
+
+	//cout << "Existe(10)? " << lista->Existe(10) << endl;
+	//cout << "Existe(1)? " << lista->Existe(1) << endl;
+	//cout << "Existe(2)? " << lista->Existe(2) << endl;
+	//cout << "Existe(3)? " << lista->Existe(3) << endl;
+	//cout << "Existe(5)? " << lista->Existe(5) << endl;
+	//cout << "Existe(7)? " << lista->Existe(7) << endl;
+
+	//lista->Eliminar(1);
+	//cout << "<<<<ELIMINAR 1>>>>>" << endl;
+	//cout << "Existe(1)? " << lista->Existe(1) << endl;
+	//
+	//lista->Eliminar(4);
+	//cout << "<<<<ELIMINAR 4>>>>>" << endl;
+	//cout << "Existe(4)? " << lista->Existe(4) << endl;
+	//
+	//cout << "<<<<INSERTA 1>>>>>" << endl;
+	//lista->Insertar(1);
+	//cout << "<<<<<BORRA 2>>>>>" << endl;
+	//lista->Eliminar(2);
+	//cout << "Existe(2)? " << lista->Existe(2) << endl;
 
 
-	lista->Insertar(1);
-	lista->Insertar(2);
-	lista->Insertar(3);
-	lista->Insertar(4);
+	//
+	//
+	//Iterador<int> it = lista->ObtenerIterador();
 
-	cout << "Existe(10)? " << lista->Existe(10) << endl;
-	cout << "Existe(1)? " << lista->Existe(1) << endl;
-	cout << "Existe(2)? " << lista->Existe(2) << endl;
-	cout << "Existe(3)? " << lista->Existe(3) << endl;
-	cout << "Existe(5)? " << lista->Existe(5) << endl;
-	cout << "Existe(7)? " << lista->Existe(7) << endl;
-
-	lista->Eliminar(1);
-	cout << "<<<<ELIMINAR 1>>>>>" << endl;
-	cout << "Existe(1)? " << lista->Existe(1) << endl;
+	//while (it.HayElemento()) 
+	//{
+	//	cout << it.ElementoActual() << endl;
+	//	it.Avanzar();
+	//}
 	
-	lista->Eliminar(4);
-	cout << "<<<<ELIMINAR 4>>>>>" << endl;
-	cout << "Existe(4)? " << lista->Existe(4) << endl;
-	
-	cout << "<<<<INSERTA 1>>>>>" << endl;
-	lista->Insertar(1);
-	cout << "<<<<<BORRA 2>>>>>" << endl;
-	lista->Eliminar(2);
-	cout << "Existe(2)? " << lista->Existe(2) << endl;
+
+	Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
+
+	hashMap->Agregar("Uno", 1);
+	hashMap->Agregar("Dos", 2);
+	hashMap->Agregar("Tres", 3);
+	hashMap->Agregar("Cuatro", 4);
+	hashMap->Agregar("Uno", 11);
+	hashMap->Agregar("Uno", 111);
 
 
-	
-	
-	Iterador<int> it = lista->ObtenerIterador();
-
-	while (it.HayElemento()) 
-	{
-		cout << it.ElementoActual() << endl;
-		it.Avanzar();
-	}
 	system("pause");
 }
