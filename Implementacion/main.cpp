@@ -40,6 +40,7 @@ void main()
 	Puntero<Lista<int>> lista = new ListaEnlazada<int>(comp);
 
 
+
 	lista->Insertar(1);
 	lista->Insertar(2);
 	lista->Insertar(3);
@@ -65,6 +66,21 @@ void main()
 	cout << "<<<<<BORRA 2>>>>>" << endl;
 	lista->Eliminar(2);
 	cout << "Existe(2)? " << lista->Existe(2) << endl;
+
+
+	
+	
+	Iterador<int> it = lista->ObtenerIterador();
+
+	while (it.HayElemento()) 
+	{
+		cout << it.ElementoActual() << endl;
+		it.Avanzar();
+	}
+	
+	
+
+
 
 
 	system("pause");
