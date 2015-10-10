@@ -19,37 +19,22 @@
     <Filter Include="Implementacion\TADS">
       <UniqueIdentifier>{5c2afaa3-877c-413d-a22c-dee7ecf1574d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementacion\TADS\Headers">
-      <UniqueIdentifier>{95762a84-edc5-4067-9474-ee59235d714a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementacion\TADS\Source">
-      <UniqueIdentifier>{3d05b847-8b07-4095-9947-9a35d9643854}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementacion\TADS\Headers\AVL">
-      <UniqueIdentifier>{e8f64ca9-de3a-401c-a877-d2f567b8fdd8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementacion\TADS\Source\AVL">
-      <UniqueIdentifier>{acc820bc-b04a-4644-9f00-85150a81141a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementacion\TADS\Headers\Comparadores">
-      <UniqueIdentifier>{f373ecd5-5dba-4177-a6e3-8820699a1f2c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementacion\TADS\Source\Comparadores">
-      <UniqueIdentifier>{06d9e726-fdc6-4d65-93cf-e4f7aa91830d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Implementacion\TADS\Headers\TablaHash">
-      <UniqueIdentifier>{56727d81-9c91-46f8-a287-3dd594ad0435}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Implementacion\Dominio\Headers">
       <UniqueIdentifier>{e7c4b910-95cd-48e8-8559-b67de9a9dd5a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Implementacion\Dominio\Src">
       <UniqueIdentifier>{04f76454-fbad-4d35-9fb8-2c3d96dd84a3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementacion\TADS\Headers\Lista">
-      <UniqueIdentifier>{25b837ec-0677-4ebc-9d7c-fa80e8e276cd}</UniqueIdentifier>
+    <Filter Include="Implementacion\TADS\AVL">
+      <UniqueIdentifier>{e8f64ca9-de3a-401c-a877-d2f567b8fdd8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementacion\TADS\Source\Lista">
+    <Filter Include="Implementacion\TADS\Comparadores">
+      <UniqueIdentifier>{f373ecd5-5dba-4177-a6e3-8820699a1f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacion\TADS\TablaHash">
+      <UniqueIdentifier>{56727d81-9c91-46f8-a287-3dd594ad0435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacion\TADS\Lista">
       <UniqueIdentifier>{92fd36f3-8876-488e-adf8-a728c02f08a0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -66,35 +51,38 @@
     <ClCompile Include="Sistema.cpp">
       <Filter>Implementacion</Filter>
     </ClCompile>
-    <ClCompile Include="AVLImp.cpp">
-      <Filter>Implementacion\TADS\Source\AVL</Filter>
-    </ClCompile>
-    <ClCompile Include="NodoAVL.cpp">
-      <Filter>Implementacion\TADS\Source\AVL</Filter>
-    </ClCompile>
-    <ClCompile Include="ComparadorInt.cpp">
-      <Filter>Implementacion\TADS\Source\Comparadores</Filter>
-    </ClCompile>
     <ClCompile Include="Barrio.cpp">
       <Filter>Implementacion\Dominio\Src</Filter>
     </ClCompile>
     <ClCompile Include="Cliente.cpp">
       <Filter>Implementacion\Dominio\Src</Filter>
     </ClCompile>
-    <ClCompile Include="ComparadorCadena.cpp">
-      <Filter>Implementacion\TADS\Source\Comparadores</Filter>
-    </ClCompile>
     <ClCompile Include="HashImp.cpp">
-      <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
+      <Filter>Implementacion\TADS\TablaHash</Filter>
     </ClCompile>
     <ClCompile Include="NodoLista.cpp">
-      <Filter>Implementacion\TADS\Source\Lista</Filter>
+      <Filter>Implementacion\TADS\Lista</Filter>
     </ClCompile>
     <ClCompile Include="ListaIteracion.cpp">
-      <Filter>Implementacion\TADS\Source\Lista</Filter>
+      <Filter>Implementacion\TADS\Lista</Filter>
     </ClCompile>
     <ClCompile Include="ListaEnlazada.cpp">
-      <Filter>Implementacion\TADS\Source\Lista</Filter>
+      <Filter>Implementacion\TADS\Lista</Filter>
+    </ClCompile>
+    <ClCompile Include="AVLImp.cpp">
+      <Filter>Implementacion\TADS\AVL</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoAVL.cpp">
+      <Filter>Implementacion\TADS\AVL</Filter>
+    </ClCompile>
+    <ClCompile Include="ComparadorCadena.cpp">
+      <Filter>Implementacion\TADS\Comparadores</Filter>
+    </ClCompile>
+    <ClCompile Include="ComparadorInt.cpp">
+      <Filter>Implementacion\TADS\Comparadores</Filter>
+    </ClCompile>
+    <ClCompile Include="FuncionClienteCI.cpp">
+      <Filter>Implementacion\TADS\TablaHash</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -120,16 +108,16 @@
       <Filter>Implementacion</Filter>
     </ClInclude>
     <ClInclude Include="AVL.h">
-      <Filter>Implementacion\TADS\Headers\AVL</Filter>
+      <Filter>Implementacion\TADS\AVL</Filter>
     </ClInclude>
     <ClInclude Include="AVLImp.h">
-      <Filter>Implementacion\TADS\Headers\AVL</Filter>
+      <Filter>Implementacion\TADS\AVL</Filter>
     </ClInclude>
     <ClInclude Include="NodoAVL.h">
-      <Filter>Implementacion\TADS\Headers\AVL</Filter>
+      <Filter>Implementacion\TADS\AVL</Filter>
     </ClInclude>
     <ClInclude Include="ComparadorInt.h">
-      <Filter>Implementacion\TADS\Headers\Comparadores</Filter>
+      <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClInclude>
     <ClInclude Include="Barrio.h">
       <Filter>Implementacion\Dominio\Headers</Filter>
@@ -138,28 +126,31 @@
       <Filter>Implementacion\Dominio\Headers</Filter>
     </ClInclude>
     <ClInclude Include="ComparadorCadena.h">
-      <Filter>Implementacion\TADS\Headers\Comparadores</Filter>
+      <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClInclude>
     <ClInclude Include="TablaHash.h">
-      <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
+      <Filter>Implementacion\TADS\TablaHash</Filter>
     </ClInclude>
     <ClInclude Include="Utilidades.h">
       <Filter>Implementacion</Filter>
     </ClInclude>
     <ClInclude Include="HashImp.h">
-      <Filter>Implementacion\TADS\Headers\TablaHash</Filter>
+      <Filter>Implementacion\TADS\TablaHash</Filter>
     </ClInclude>
     <ClInclude Include="Lista.h">
-      <Filter>Implementacion\TADS\Source\Lista</Filter>
+      <Filter>Implementacion\TADS\Lista</Filter>
     </ClInclude>
     <ClInclude Include="ListaEnlazada.h">
-      <Filter>Implementacion\TADS\Source\Lista</Filter>
+      <Filter>Implementacion\TADS\Lista</Filter>
     </ClInclude>
     <ClInclude Include="ListaIteracion.h">
-      <Filter>Implementacion\TADS\Source\Lista</Filter>
+      <Filter>Implementacion\TADS\Lista</Filter>
     </ClInclude>
     <ClInclude Include="NodoLista.h">
-      <Filter>Implementacion\TADS\Source\Lista</Filter>
+      <Filter>Implementacion\TADS\Lista</Filter>
+    </ClInclude>
+    <ClInclude Include="FuncionClienteCI.h">
+      <Filter>Implementacion\TADS\TablaHash</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

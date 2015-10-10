@@ -77,11 +77,5 @@ void main()
 		cout << it.ElementoActual() << endl;
 		it.Avanzar();
 	}
-	
-	
-
-
-
-
 	system("pause");
 }
