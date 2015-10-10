@@ -81,9 +81,6 @@
     <ClCompile Include="ComparadorInt.cpp">
       <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClCompile>
-    <ClCompile Include="FuncionNat.cpp">
-      <Filter>Implementacion\TADS\TablaHash</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CasoDePrueba.h">
@@ -148,9 +145,6 @@
     </ClInclude>
     <ClInclude Include="NodoLista.h">
       <Filter>Implementacion\TADS\Lista</Filter>
-    </ClInclude>
-    <ClInclude Include="FuncionNat.h">
-      <Filter>Implementacion\TADS\TablaHash</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

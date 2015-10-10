@@ -11,6 +11,7 @@
 #include "TablaHash.h"
 #include "CadenaFuncionHash.h"
 #include "NodoLista.h"
+
 Puntero<ISistema> Inicializar(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
 	return new Sistema(MAX_BARRIOS, MAX_CLIENTES);

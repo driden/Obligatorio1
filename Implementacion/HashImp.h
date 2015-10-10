@@ -29,6 +29,7 @@ public:
 	/* SELECTORAS */
 	bool Obtener(const Clave& c, Valor& v) const override;
 	nat Largo() const override;
+	
 };
 #endif
 #include "HashImp.cpp"
