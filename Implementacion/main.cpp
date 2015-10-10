@@ -38,12 +38,33 @@ void main()
 
 	Comparador<int> comp = new ComparadorInt();
 	Puntero<Lista<int>> lista = new ListaEnlazada<int>(comp);
-	
-	
+
+
 	lista->Insertar(1);
 	lista->Insertar(2);
 	lista->Insertar(3);
 	lista->Insertar(4);
+
+	cout << "Existe(10)? " << lista->Existe(10) << endl;
+	cout << "Existe(1)? " << lista->Existe(1) << endl;
+	cout << "Existe(2)? " << lista->Existe(2) << endl;
+	cout << "Existe(3)? " << lista->Existe(3) << endl;
+	cout << "Existe(5)? " << lista->Existe(5) << endl;
+	cout << "Existe(7)? " << lista->Existe(7) << endl;
+
+	lista->Eliminar(1);
+	cout << "<<<<ELIMINAR 1>>>>>" << endl;
+	cout << "Existe(1)? " << lista->Existe(1) << endl;
+	
+	lista->Eliminar(4);
+	cout << "<<<<ELIMINAR 4>>>>>" << endl;
+	cout << "Existe(4)? " << lista->Existe(4) << endl;
+	
+	cout << "<<<<INSERTA 1>>>>>" << endl;
+	lista->Insertar(1);
+	cout << "<<<<<BORRA 2>>>>>" << endl;
+	lista->Eliminar(2);
+	cout << "Existe(2)? " << lista->Existe(2) << endl;
 
 
 	system("pause");

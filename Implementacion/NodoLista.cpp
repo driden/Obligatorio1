@@ -8,7 +8,7 @@ const T& NodoLista<T>::GetDato() const
 	return _dato;
 }
 template <class T>
-const Puntero<NodoLista<T>> NodoLista<T>::GetSiguiente() const
+const Puntero<NodoLista<T>>& NodoLista<T>::GetSiguiente() const
 {
 	return _sig;
 }

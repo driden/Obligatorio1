@@ -14,7 +14,7 @@ public:
 		_sig = nullptr;
 	};
 	const T& GetDato() const;
-	const Puntero<NodoLista<T>> GetSiguiente() const;
+	const Puntero<NodoLista<T>>& GetSiguiente() const;
 	void SetSiguiente(const Puntero<NodoLista<T>> &sig);
 	
 

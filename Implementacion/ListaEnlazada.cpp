@@ -15,13 +15,11 @@ void ListaEnlazada<T>::Insertar(const T& x)
 	else
 	{
 		Puntero<NodoLista<T>> aux = _lista;
-		Puntero<NodoLista<T>> anterior = aux;
 		while ( aux ->GetSiguiente() != nullptr)
 		{
-			anterior = aux;
 			aux = aux->GetSiguiente();
 		}
-		anterior->SetSiguiente(nuevo);
+		aux->SetSiguiente(nuevo);
 	}
 	this->cantElementos = cantElementos + 1;
 }
@@ -48,18 +46,16 @@ void ListaEnlazada<T>::Eliminar(const T& x)
 		}
 		else
 		{
-			Iterador<T> it = ObtenerIterador();
 			Puntero<NodoLista<T>> aux = _lista;
-			Puntero<NodoLista<T>> ant = _lista;
+			Puntero<NodoLista<T>> anterior = _lista;
 
-			while (_comp.SonDistintos(it.ElementoActual(), x))
+			while (_comp.SonDistintos(aux->GetDato(), x))
 			{
-				ant = aux;
+				anterior = aux;
 				aux = aux->GetSiguiente();
 			}
 			
-			ant->SetSiguiente(aux->GetSiguiente());
-			aux = nullptr;
+			anterior->SetSiguiente(aux->GetSiguiente());			
 		}
 		this->cantElementos = cantElementos - 1;
 	}
