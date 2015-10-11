@@ -16,6 +16,9 @@ class Set abstract : public Iterable<T>
 	/* inserta el elemento x en el conjunto, si es
 	que x no era ya un elemento del conjunto */
 
+	virtual void Eliminar(const T&x) abstract;
+	/* Elimina el elemento x en el conjunto, si este pertenece*/
+
 	virtual bool EsVacio() const abstract;
 	// retorna true si el conjunto es vacío
 

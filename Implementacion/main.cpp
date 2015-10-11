@@ -11,6 +11,7 @@
 #include "TablaHash.h"
 #include "CadenaFuncionHash.h"
 #include "NodoLista.h"
+#include "SetAcotado.h"
 
 Puntero<ISistema> Inicializar(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
@@ -82,7 +83,7 @@ void main()
 	/* PRUEBAS DE LAS OPERACIONES DE HASH MAP */
 	Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
 
-
+	/*
 
 	hashMap->Agregar("Uno", 1);
 	hashMap->Agregar("Dos", 2);
@@ -108,12 +109,43 @@ void main()
 	hashMap->Pertenece("Cuatro");
 	hashMap->Pertenece("0");
 	
-
 	
+	*/
+	/*PRUEBAS DE LAS OPERACIONES DE SET*/
+		
+		Comparador<int> cmp = new ComparadorInt();
+		Puntero<SetAcotado<int>> set = new SetAcotado<int>(10, cmp);
+		Puntero<SetAcotado<int>> setAComparar = new SetAcotado<int>(15, cmp);
 
+	//	set->EsLleno();
+	//set->EsVacio();
+	//set->Tamanio();
 
-	
+		set->Insertar(5);
+		set->Insertar(10);
+		set->Insertar(25);
+		set->Eliminar(25);
+		set->Eliminar(10);
+		set->Imprimir();
+		
+	//	set->Pertenece(5);
+	//	set->Pertenece(-1);
+	//	set->Pertenece(0);
+		
+	//	set->Eliminar(5);
+	//	set->EsLleno();
+	//	set->EsVacio();
+	//	set->Tamanio();
 
+		
 
+	//	Puntero<SetAcotado<int>> retornoUnion =set->Union(setAComparar);
+		//Puntero<SetAcotado<int>> retornoInterseccion = set->Interseccion(setAComparar);
+		//Puntero<SetAcotado<int>> retornoDiferencia = set->Diferencia(setAComparar);
+		//retornoUnion->Imprimir();
+		//retornoInterseccion->Imprimir();
+		//retornoDiferencia->Imprimir();
+
+		
 	system("pause");
 }

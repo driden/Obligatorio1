@@ -10,11 +10,13 @@ class SetAcotado : public Set<T>
 	Array<T> _set;
 	nat _tope;
 	Comparador<T> _comp;
+	
 
 	public:
 	SetAcotado(nat tamanio, Comparador<T> comp);
 
 	void Insertar(const T &x) override;
+	void Eliminar(const T &x) override;
 	bool EsVacio() const override;
 	bool EsLleno() const override;
 	nat Tamanio() const override;
