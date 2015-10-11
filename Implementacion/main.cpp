@@ -79,8 +79,10 @@ void main()
 	//	it.Avanzar();
 	//}
 	
-
+	/* PRUEBAS DE LAS OPERACIONES DE HASH MAP */
 	Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
+
+
 
 	hashMap->Agregar("Uno", 1);
 	hashMap->Agregar("Dos", 2);
@@ -88,6 +90,29 @@ void main()
 	hashMap->Agregar("Cuatro", 4);
 	hashMap->Agregar("Uno", 11);
 	hashMap->Agregar("Uno", 111);
+
+	hashMap->Borrar("Uno");
+	hashMap->Borrar("Dos");
+	hashMap->Borrar("Tres");
+	hashMap->Borrar("Cuatro");
+	hashMap->Borrar("Uno");
+
+	hashMap->EstaLlena();
+	hashMap->EstaVacia();
+	hashMap->Largo();
+	
+	//hashMap->Obtener("Uno", 1);
+	hashMap->Pertenece("Uno");
+	hashMap->Pertenece("Dos");
+	hashMap->Pertenece("Tres");
+	hashMap->Pertenece("Cuatro");
+	hashMap->Pertenece("0");
+	
+
+	
+
+
+	
 
 
 	system("pause");

@@ -27,7 +27,7 @@ void ListaEnlazada<T>::Insertar(const T& x)
 template <class T>
 const nat ListaEnlazada<T>::Largo() const
 {
-	return cantElementos;
+	return (this == nullptr) ? 0: cantElementos;
 }
 
 template <class T>

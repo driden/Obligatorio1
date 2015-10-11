@@ -39,8 +39,15 @@ bool HashImp<Clave, Valor>::EstaVacia() const
 	for (nat i = 0; i < _largo; i++)
 	{
 		Puntero<Lista<Valor>> lista = _hash[i];
-		vacia = (lista->Largo() == 0) && vacia;
-	}
+		if (lista != nullptr){
+			vacia = (lista->Largo() == 0) && vacia;
+		}
+		else
+		{
+			vacia = true;
+		}
+
+			}
 		
 	return vacia;
 }
@@ -52,7 +59,14 @@ bool HashImp<Clave, Valor>::EstaLlena() const
 	for (nat i = 0; i < _largo; i++)
 	{
 		Puntero<Lista<Valor>> lista = _hash[i];
+		if (lista != nullptr){
 		llena = (lista->Largo() != 0) && llena;
+		}
+		else
+		{
+			llena = false;
+		}
+
 	}
 	return llena;
 }
@@ -62,7 +76,8 @@ bool HashImp<Clave, Valor>::Pertenece(const Clave& c) const
 {
 	nat bucket = _funcionHash->CodigoDeHash(c) % _largo;
 	Puntero<Lista<Valor>> lista = _hash[bucket];
-	return lista->Largo()!=0;
+	return lista !=nullptr && lista->Largo() != 0;
+	
 }
 
 template <class Clave, class Valor>
