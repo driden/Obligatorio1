@@ -99,12 +99,14 @@
     <ClCompile Include="Barrio.cpp" />
     <ClCompile Include="CasoDePrueba.cpp" />
     <ClCompile Include="Cliente.cpp" />
+    <ClCompile Include="ColaPrioridadAcotada.cpp" />
     <ClCompile Include="ComparadorCadena.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
     <ClCompile Include="HashImp.cpp" />
     <ClCompile Include="ListaEnlazada.cpp" />
     <ClCompile Include="ListaIteracion.cpp" />
     <ClCompile Include="NodoAVL.cpp" />
+    <ClCompile Include="NodoCP.cpp" />
     <ClCompile Include="NodoLista.cpp" />
     <ClCompile Include="PruebasMock.cpp" />
     <ClCompile Include="main.cpp" />
@@ -117,6 +119,8 @@
     <ClInclude Include="Barrio.h" />
     <ClInclude Include="CasoDePrueba.h" />
     <ClInclude Include="Cliente.h" />
+    <ClInclude Include="ColaPrioridad.h" />
+    <ClInclude Include="ColaPrioridadAcotada.h" />
     <ClInclude Include="ComparadorCadena.h" />
     <ClInclude Include="ComparadorInt.h" />
     <ClInclude Include="HashImp.h" />
@@ -124,6 +128,7 @@
     <ClInclude Include="ListaEnlazada.h" />
     <ClInclude Include="ListaIteracion.h" />
     <ClInclude Include="NodoAVL.h" />
+    <ClInclude Include="NodoCP.h" />
     <ClInclude Include="NodoLista.h" />
     <ClInclude Include="PruebasMock.h" />
     <ClInclude Include="ICliente.h" />
