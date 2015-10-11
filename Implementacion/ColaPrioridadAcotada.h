@@ -5,21 +5,23 @@
 #include "Array.h"
 #include "NodoCP.h"
 
+
 template<class T>
-class ColaPrioridadAcotada : public ColaPrioridad<T>
+class ColaPrioridadAcotada : public ColaPrioridad < T >
 {
-	private:
-	Array<NodoCP<T>> _pqueue;
+private:
+	Array<Puntero<NodoCP<T>>> _pqueue;
 	nat _tope;
-	
-	public:
+	Comparador<nat> _comp;
+
+public:
 	~ColaPrioridadAcotada() {}
 
 	ColaPrioridadAcotada<T>(nat max);
 
 	void Insertar(const T &x, const nat p) override;
 
-	Puntero<T> BorrarMin() override;
+	T BorrarMin() override ;
 
 	nat Tamanio() override;
 

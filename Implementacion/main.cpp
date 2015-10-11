@@ -11,6 +11,9 @@
 #include "TablaHash.h"
 #include "CadenaFuncionHash.h"
 #include "NodoLista.h"
+#include "ColaPrioridadAcotada.h"
+
+
 
 Puntero<ISistema> Inicializar(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
@@ -39,8 +42,8 @@ void main()
 	//cout << "dsps del 1602 " << Utilidades::ProximoPrimo(1602) << endl;
 	//cout << "dsps del 3511 " << Utilidades::ProximoPrimo(3511) << endl;
 
-	Comparador<int> comp = new ComparadorInt();
-	Puntero<Lista<int>> lista = new ListaEnlazada<int>(comp);
+	//Comparador<int> comp = new ComparadorInt();
+	//Puntero<Lista<int>> lista = new ListaEnlazada<int>(comp);
 
 	//lista->Insertar(1);
 	//lista->Insertar(2);
@@ -80,40 +83,48 @@ void main()
 	//}
 	
 	/* PRUEBAS DE LAS OPERACIONES DE HASH MAP */
-	Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
+	//Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
 
 
 
-	hashMap->Agregar("Uno", 1);
-	hashMap->Agregar("Dos", 2);
-	hashMap->Agregar("Tres", 3);
-	hashMap->Agregar("Cuatro", 4);
-	hashMap->Agregar("Uno", 11);
-	hashMap->Agregar("Uno", 111);
+	//hashMap->Agregar("Uno", 1);
+	//hashMap->Agregar("Dos", 2);
+	//hashMap->Agregar("Tres", 3);
+	//hashMap->Agregar("Cuatro", 4);
+	//hashMap->Agregar("Uno", 11);
+	//hashMap->Agregar("Uno", 111);
 
-	hashMap->Borrar("Uno");
-	hashMap->Borrar("Dos");
-	hashMap->Borrar("Tres");
-	hashMap->Borrar("Cuatro");
-	hashMap->Borrar("Uno");
+	//hashMap->Borrar("Uno");
+	//hashMap->Borrar("Dos");
+	//hashMap->Borrar("Tres");
+	//hashMap->Borrar("Cuatro");
+	//hashMap->Borrar("Uno");
 
-	hashMap->EstaLlena();
-	hashMap->EstaVacia();
-	hashMap->Largo();
+	//hashMap->EstaLlena();
+	//hashMap->EstaVacia();
+	//hashMap->Largo();
+	//
+	////hashMap->Obtener("Uno", 1);
+	//hashMap->Pertenece("Uno");
+	//hashMap->Pertenece("Dos");
+	//hashMap->Pertenece("Tres");
+	//hashMap->Pertenece("Cuatro");
+	//hashMap->Pertenece("0");
+
+	Puntero<ColaPrioridad<int>> pq = new ColaPrioridadAcotada<int>(10);
+
+	pq->Insertar(13,13);
+	pq->Insertar(21,21);
+	pq->Insertar(16,16);
+	pq->Insertar(24,24);
+	pq->Insertar(31,31);
+	pq->Insertar(19,19);
+	pq->Insertar(68,68);
+	pq->Insertar(65,65);
+	pq->Insertar(26,26);
+	pq->Insertar(32,32);
 	
-	//hashMap->Obtener("Uno", 1);
-	hashMap->Pertenece("Uno");
-	hashMap->Pertenece("Dos");
-	hashMap->Pertenece("Tres");
-	hashMap->Pertenece("Cuatro");
-	hashMap->Pertenece("0");
-	
-
-	
-
-
-	
-
+	pq->BorrarMin();
 
 	system("pause");
 }

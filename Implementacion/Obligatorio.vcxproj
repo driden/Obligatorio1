@@ -102,6 +102,7 @@
     <ClCompile Include="ColaPrioridadAcotada.cpp" />
     <ClCompile Include="ComparadorCadena.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
+    <ClCompile Include="ComparadorNat.cpp" />
     <ClCompile Include="HashImp.cpp" />
     <ClCompile Include="ListaEnlazada.cpp" />
     <ClCompile Include="ListaIteracion.cpp" />
@@ -123,6 +124,7 @@
     <ClInclude Include="ColaPrioridadAcotada.h" />
     <ClInclude Include="ComparadorCadena.h" />
     <ClInclude Include="ComparadorInt.h" />
+    <ClInclude Include="ComparadorNat.h" />
     <ClInclude Include="HashImp.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaEnlazada.h" />

@@ -1,5 +1,6 @@
 #ifndef NODOCP_H
 #define NODOCP_H
+#include <Comparador.h>
 typedef unsigned int nat;
 
 template <class T>
@@ -12,17 +13,18 @@ class NodoCP
 
 	public:
 	~NodoCP(){}
-
-	NodoCP(T e, nat p)
+	NodoCP(){}
+	NodoCP(const T &e, const nat &p)
 	{
 		_element = e;
 		_prioridad = p;
 	}
 
-	const T& GetElemento() const;
-	const nat GetPrioridad() const;
+	T GetElemento() const;
+	nat GetPrioridad() const;
 	void SetElemento(const T &e);
 	void SetPrioridad(const nat p);
+	Comparador<NodoCP<T>> GetComparador();
 };
 #endif
 #include "NodoCP.cpp"
