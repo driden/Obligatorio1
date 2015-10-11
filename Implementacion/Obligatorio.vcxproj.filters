@@ -37,6 +37,9 @@
     <Filter Include="Implementacion\TADS\Lista">
       <UniqueIdentifier>{92fd36f3-8876-488e-adf8-a728c02f08a0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Implementacion\TADS\SetAcotado">
+      <UniqueIdentifier>{cb8bebb6-bb4c-406e-b262-c7ed6c9bff11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasoDePrueba.cpp">
@@ -80,6 +83,9 @@
     </ClCompile>
     <ClCompile Include="ComparadorInt.cpp">
       <Filter>Implementacion\TADS\Comparadores</Filter>
+    </ClCompile>
+    <ClCompile Include="SetAcotado.cpp">
+      <Filter>Implementacion\TADS\SetAcotado</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +151,12 @@
     </ClInclude>
     <ClInclude Include="NodoLista.h">
       <Filter>Implementacion\TADS\Lista</Filter>
+    </ClInclude>
+    <ClInclude Include="SetAcotado.h">
+      <Filter>Implementacion\TADS\SetAcotado</Filter>
+    </ClInclude>
+    <ClInclude Include="Set.h">
+      <Filter>Implementacion\TADS\SetAcotado</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

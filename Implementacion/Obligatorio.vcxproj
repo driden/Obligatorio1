@@ -108,6 +108,7 @@
     <ClCompile Include="NodoLista.cpp" />
     <ClCompile Include="PruebasMock.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SetAcotado.cpp" />
     <ClCompile Include="Sistema.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +130,8 @@
     <ClInclude Include="IBarrio.h" />
     <ClInclude Include="IRecorrido.h" />
     <ClInclude Include="ISistema.h" />
+    <ClInclude Include="Set.h" />
+    <ClInclude Include="SetAcotado.h" />
     <ClInclude Include="Sistema.h" />
     <ClInclude Include="TablaHash.h" />
     <ClInclude Include="Utilidades.h" />
