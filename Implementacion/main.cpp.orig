@@ -11,10 +11,13 @@
 #include "TablaHash.h"
 #include "CadenaFuncionHash.h"
 #include "NodoLista.h"
-#include "ColaPrioridadAcotada.h"
+<<<<<<< HEAD
 #include "SetAcotado.h"
+=======
+#include "ColaPrioridadAcotada.h"
 
 
+>>>>>>> e6a0dfd5384cdc2aa19550743a7aab03883cda1a
 
 Puntero<ISistema> Inicializar(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
@@ -84,10 +87,10 @@ void main()
 	//}
 	
 	/* PRUEBAS DE LAS OPERACIONES DE HASH MAP */
-	//Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
+<<<<<<< HEAD
+	Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
 
 	/*
-
 
 	hashMap->Agregar("Uno", 1);
 	hashMap->Agregar("Dos", 2);
@@ -95,13 +98,12 @@ void main()
 	hashMap->Agregar("Cuatro", 4);
 	hashMap->Agregar("Uno", 11);
 	hashMap->Agregar("Uno", 111);
+=======
+	//Puntero<TablaHash<Cadena, int>> hashMap = new HashImp<Cadena, int>(4,new CadenaFuncionHash() , comp);
+>>>>>>> e6a0dfd5384cdc2aa19550743a7aab03883cda1a
 
-	hashMap->Borrar("Uno");
-	hashMap->Borrar("Dos");
-	hashMap->Borrar("Tres");
-	hashMap->Borrar("Cuatro");
-	hashMap->Borrar("Uno");
 
+<<<<<<< HEAD
 	hashMap->EstaLlena();
 	hashMap->EstaVacia();
 	hashMap->Largo();
@@ -142,6 +144,41 @@ void main()
 	//	set->Tamanio();
 
 		
+
+	//	Puntero<SetAcotado<int>> retornoUnion =set->Union(setAComparar);
+		//Puntero<SetAcotado<int>> retornoInterseccion = set->Interseccion(setAComparar);
+		//Puntero<SetAcotado<int>> retornoDiferencia = set->Diferencia(setAComparar);
+		//retornoUnion->Imprimir();
+		//retornoInterseccion->Imprimir();
+		//retornoDiferencia->Imprimir();
+
+		
+=======
+
+	//hashMap->Agregar("Uno", 1);
+	//hashMap->Agregar("Dos", 2);
+	//hashMap->Agregar("Tres", 3);
+	//hashMap->Agregar("Cuatro", 4);
+	//hashMap->Agregar("Uno", 11);
+	//hashMap->Agregar("Uno", 111);
+
+	//hashMap->Borrar("Uno");
+	//hashMap->Borrar("Dos");
+	//hashMap->Borrar("Tres");
+	//hashMap->Borrar("Cuatro");
+	//hashMap->Borrar("Uno");
+
+	//hashMap->EstaLlena();
+	//hashMap->EstaVacia();
+	//hashMap->Largo();
+	//
+	////hashMap->Obtener("Uno", 1);
+	//hashMap->Pertenece("Uno");
+	//hashMap->Pertenece("Dos");
+	//hashMap->Pertenece("Tres");
+	//hashMap->Pertenece("Cuatro");
+	//hashMap->Pertenece("0");
+
 	Puntero<ColaPrioridad<int>> pq = new ColaPrioridadAcotada<int>(10);
 
 	pq->Insertar(13,13);
@@ -156,13 +193,7 @@ void main()
 	pq->Insertar(32,32);
 	
 	pq->BorrarMin();
-	
-	Puntero<SetAcotado<int>> retornoUnion =set->Union(setAComparar);
-	//Puntero<SetAcotado<int>> retornoInterseccion = set->Interseccion(setAComparar);
-	//Puntero<SetAcotado<int>> retornoDiferencia = set->Diferencia(setAComparar);
-	//retornoUnion->Imprimir();
-	//retornoInterseccion->Imprimir();
-	//retornoDiferencia->Imprimir();
-	
+
+>>>>>>> e6a0dfd5384cdc2aa19550743a7aab03883cda1a
 	system("pause");
 }

@@ -40,6 +40,9 @@
     <Filter Include="Implementacion\TADS\SetAcotado">
       <UniqueIdentifier>{cb8bebb6-bb4c-406e-b262-c7ed6c9bff11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Implementacion\TADS\ColaPrioridad">
+      <UniqueIdentifier>{5d08638b-e38b-4003-b1fe-332f347ee682}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasoDePrueba.cpp">
@@ -86,6 +89,15 @@
     </ClCompile>
     <ClCompile Include="SetAcotado.cpp">
       <Filter>Implementacion\TADS\SetAcotado</Filter>
+    </ClCompile>
+    <ClCompile Include="ColaPrioridadAcotada.cpp">
+      <Filter>Implementacion\TADS\ColaPrioridad</Filter>
+    </ClCompile>
+    <ClCompile Include="ComparadorNat.cpp">
+      <Filter>Implementacion\TADS\Comparadores</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoCP.cpp">
+      <Filter>Implementacion\TADS\ColaPrioridad</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +169,18 @@
     </ClInclude>
     <ClInclude Include="Set.h">
       <Filter>Implementacion\TADS\SetAcotado</Filter>
+    </ClInclude>
+    <ClInclude Include="ColaPrioridad.h">
+      <Filter>Implementacion\TADS\ColaPrioridad</Filter>
+    </ClInclude>
+    <ClInclude Include="ColaPrioridadAcotada.h">
+      <Filter>Implementacion\TADS\ColaPrioridad</Filter>
+    </ClInclude>
+    <ClInclude Include="ComparadorNat.h">
+      <Filter>Implementacion\TADS\Comparadores</Filter>
+    </ClInclude>
+    <ClInclude Include="NodoCP.h">
+      <Filter>Implementacion\TADS\ColaPrioridad</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
