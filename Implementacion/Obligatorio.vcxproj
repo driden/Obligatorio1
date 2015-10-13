@@ -102,6 +102,7 @@
     <ClCompile Include="ColaDinamica.cpp" />
     <ClCompile Include="ColaPrioridadAcotada.cpp" />
     <ClCompile Include="ComparadorCadena.cpp" />
+    <ClCompile Include="ComparadorClienteCI.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
     <ClCompile Include="ComparadorNat.cpp" />
     <ClCompile Include="GrafoAcotado.cpp" />
@@ -127,6 +128,7 @@
     <ClInclude Include="ColaPrioridad.h" />
     <ClInclude Include="ColaPrioridadAcotada.h" />
     <ClInclude Include="ComparadorCadena.h" />
+    <ClInclude Include="ComparadorClienteCI.h" />
     <ClInclude Include="ComparadorInt.h" />
     <ClInclude Include="ComparadorNat.h" />
     <ClInclude Include="Grafo.h" />
