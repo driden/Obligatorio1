@@ -43,6 +43,12 @@
     <Filter Include="Implementacion\TADS\ColaPrioridad">
       <UniqueIdentifier>{5d08638b-e38b-4003-b1fe-332f347ee682}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Implementacion\TADS\Grafo">
+      <UniqueIdentifier>{dc861dff-9bb7-4f4c-9f81-1dd9929d87fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Implementacion\TADS\Cola">
+      <UniqueIdentifier>{5dd3d6a7-1b5e-4041-97ad-7fd83e3a9788}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CasoDePrueba.cpp">
@@ -98,6 +104,12 @@
     </ClCompile>
     <ClCompile Include="NodoCP.cpp">
       <Filter>Implementacion\TADS\ColaPrioridad</Filter>
+    </ClCompile>
+    <ClCompile Include="GrafoAcotado.cpp">
+      <Filter>Implementacion\TADS\Grafo</Filter>
+    </ClCompile>
+    <ClCompile Include="ColaDinamica.cpp">
+      <Filter>Implementacion\TADS\Cola</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +193,18 @@
     </ClInclude>
     <ClInclude Include="NodoCP.h">
       <Filter>Implementacion\TADS\ColaPrioridad</Filter>
+    </ClInclude>
+    <ClInclude Include="Grafo.h">
+      <Filter>Implementacion\TADS\Grafo</Filter>
+    </ClInclude>
+    <ClInclude Include="GrafoAcotado.h">
+      <Filter>Implementacion\TADS\Grafo</Filter>
+    </ClInclude>
+    <ClInclude Include="Cola.h">
+      <Filter>Implementacion\TADS\Cola</Filter>
+    </ClInclude>
+    <ClInclude Include="ColaDinamica.h">
+      <Filter>Implementacion\TADS\Cola</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,32 +7,29 @@ SetAcotado<T>::SetAcotado(nat tamanio,Comparador<T> comp)
 {
 	_set = Array<T>(tamanio);
 	_comp = comp;
-	_tope = -1;
+	_tope = 0;
 	
 }
 
 template <class T>
 void SetAcotado<T>::Insertar(const T& x)
 {
-	if (!EsLleno()) {
-		
-		_set[++_tope] = x;
-		
-		
+	if (!EsLleno() && !Pertenece(x)) {		
+		_set[_tope] = x;
+		_tope++;				
 	}
 }
 
 template<class T>
 void SetAcotado<T>::Eliminar(const T& x)
 {
-	if (!EsVacio())
+	if (!EsVacio() && Pertenece(x))
 	{
-		
 		for (nat i = 0; i < Tamanio(); i++)
 		{
 			if (_comp.SonIguales(_set[i] , x))
 			{
-				for (nat j = i; j <= _tope; j++)
+				for (nat j = i; j < _tope; j++)
 				{
 					_set[j] = _set[j + 1];
 				}
@@ -40,33 +37,32 @@ void SetAcotado<T>::Eliminar(const T& x)
 			}
 		}
 		_tope--;
-		
-
 	}
 }
 
 template <class T>
 bool SetAcotado<T>::EsVacio() const
 {
-	return _tope == -1;
+	return _tope == 0;
 }
 
 template <class T>
 bool SetAcotado<T>::EsLleno() const
 {
-	return _tope == (_set.Largo - 1);
+	return _tope == _set.Largo;
 }
 
 template <class T>
 nat SetAcotado<T>::Tamanio() const
 {
-	return _tope + 1;
+	return _tope;
 }
 
 template <class T>
 bool SetAcotado<T>::Pertenece(const T& x) const
 {
 	bool pertenece = false;
+	
 	nat i = 0;
 	
 	while (!pertenece && i < _tope)
@@ -94,7 +90,7 @@ Puntero<Set<T>> SetAcotado<T>::Union(Puntero<Set<T>> A) const
 		newSet->Insertar(iterA.ElementoActual());
 	}
 	
-	for (nat i = 0; _tope; i++)
+	for (nat i = 0; i < _tope; i++)
 	{
 		if (!newSet->Pertenece(_set[i]))
 			newSet->Insertar(_set[i]);
@@ -141,7 +137,7 @@ template <class T>
 Iterador<T> SetAcotado<T>::ObtenerIterador() const
 {
 	Array<T> copiaSet = Array<T>(_tope+1);
-	_set.Copiar(_set, 0, _tope+1, copiaSet);
+	_set.Copiar(_set, 0, _tope, copiaSet);
 	return copiaSet.ObtenerIterador();
 }
 #endif
