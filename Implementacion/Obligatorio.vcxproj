@@ -101,6 +101,7 @@
     <ClCompile Include="Cliente.cpp" />
     <ClCompile Include="ColaDinamica.cpp" />
     <ClCompile Include="ColaPrioridadAcotada.cpp" />
+    <ClCompile Include="ComparadorBarrio.cpp" />
     <ClCompile Include="ComparadorCadena.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
     <ClCompile Include="ComparadorNat.cpp" />
@@ -126,6 +127,7 @@
     <ClInclude Include="ColaDinamica.h" />
     <ClInclude Include="ColaPrioridad.h" />
     <ClInclude Include="ColaPrioridadAcotada.h" />
+    <ClInclude Include="ComparadorBarrio.h" />
     <ClInclude Include="ComparadorCadena.h" />
     <ClInclude Include="ComparadorInt.h" />
     <ClInclude Include="ComparadorNat.h" />
@@ -136,6 +138,7 @@
     <ClInclude Include="ListaEnlazada.h" />
     <ClInclude Include="ListaIteracion.h" />
     <ClInclude Include="NodoAVL.h" />
+    <ClInclude Include="NodoBarrioClientes.h" />
     <ClInclude Include="NodoCP.h" />
     <ClInclude Include="NodoLista.h" />
     <ClInclude Include="PruebasMock.h" />

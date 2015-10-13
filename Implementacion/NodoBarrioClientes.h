@@ -19,7 +19,7 @@ public:
 	NodoBarrioClientes(Barrio barrio)
 	{
 		this->_barrio = barrio;
-		Comparador<Cliente> comp;
+		Comparador<Cliente> comp = new Comparador<Cliente>();
 		this->_clientes = new AVLImp<Cliente>(comp);
 		
 	}
