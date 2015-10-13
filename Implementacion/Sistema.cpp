@@ -1,14 +1,29 @@
 ﻿#include "Sistema.h"
+#include "HashImp.h"
+#include "AVLImp.h"
+#include "NodoBarrioClientes.h"
 
 Sistema::Sistema(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
+
+
 }
 
 // Tipo 1
 
 TipoRetorno Sistema::IngresoBarrio(Cadena nombreBarrio, nat cantidadCamaras, nat promedioHurtos)
 {
-	return NO_IMPLEMENTADA;
+	Puntero<AVL<NodoBarriolClientes>> barrioCliente;
+
+
+	return OK;
+
+	else
+	{
+		if (barrios->GetComparador()->SonIguales(barrios->Get,nombreBarrio))
+		return ERROR;
+
+	}
 }
 
 TipoRetorno Sistema::IngresoCliente(nat ciCliente, Cadena nombreCliente, nat fechaRegCliente, Cadena nombreBarrio, Cadena direccion)
