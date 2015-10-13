@@ -90,7 +90,7 @@ void ColaPrioridadAcotada<T>::ActualizarPrioridad(const T elem, nat nuevaPriorid
 	while (!elemPrioridad->EstaVacia())
 	{
 		p =  elemPrioridad->GetMinPrioridad();
-		e = BorrarMin();
+		e = elemPrioridad->BorrarMin();
 		
 		Insertar(e, p);
 	}	

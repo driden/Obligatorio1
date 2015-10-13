@@ -68,7 +68,8 @@ nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Ar
 				pq->Insertar(i, costo[i]);
 			}
 			else if (conocido[i] && (pesoArista + costo[previo]) < menorCosto)
-			{				
+			{		
+				
 				menorCosto = costo[i];
 				menorPosicion = i;
 				//borro el vertice i de la cola y 
@@ -77,8 +78,6 @@ nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Ar
 			}
 		}
 	}
-	if (menorPosicion != INT_MAX)
-		conocido[menorPosicion] = true;
 	return menorPosicion;
 }
 
@@ -120,12 +119,14 @@ bool GrafoAcotado<T>::CaminoMasCorto(T& origen, T& destino)
 	//arranco con el elemento que me interesa y esta en el origen
 	conocido[vOrigen] = true;
 	costo[vOrigen] = 0;
-
+	nat v_anterior = vOrigen;
 	nat verticeActual;
 	while (!pq->EstaVacia())
 	{
 		verticeActual = pq->BorrarMin();
 		conocido[verticeActual] = true;
+		anterior[verticeActual] = v_anterior;
+		v_anterior = verticeActual;
 		AdyacenteConMenorCosto(verticeActual, conocido, costo, anterior, pq);
 
 	}
