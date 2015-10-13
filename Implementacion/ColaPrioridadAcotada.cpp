@@ -2,6 +2,8 @@
 #define COLAPRIORIDADACOTADA_CPP
 #include "ColaPrioridadAcotada.h"
 #include "ComparadorNat.h"
+#include "Cola.h"
+#include "ColaDinamica.h"
 
 template <class T>
 ColaPrioridadAcotada<T>::ColaPrioridadAcotada(nat max)
@@ -10,6 +12,7 @@ ColaPrioridadAcotada<T>::ColaPrioridadAcotada(nat max)
 	_pqueue = Array<Puntero<NodoCP<T>>>(max + 1);
 	_comp = new ComparadorNat();
 	_tope = 0;
+	_comp_tipo = nullptr;
 }
 
 template <class T>
@@ -67,4 +70,42 @@ bool ColaPrioridadAcotada<T>::EstaVacia()
 	return (this == nullptr) || this->_tope == 0;
 }
 
+template <class T>
+void ColaPrioridadAcotada<T>::ActualizarPrioridad(const T elem, nat nuevaPrioridad)
+{
+	//Voy borrando e insertando, conociendo la prioridad que tiene cada elemento
+	Puntero<ColaPrioridad<T>> elemPrioridad = new ColaPrioridadAcotada<T>(_pqueue.ObtenerLargo());
+	nat p;
+	T e;
+	while (!EstaVacia())
+	{
+		p = _pqueue[1]->GetPrioridad();
+		e = BorrarMin();
+		if (_comp_tipo.SonIguales(elem, e))
+			p = nuevaPrioridad;
+	
+		elemPrioridad->Insertar(e, p);
+	}
+
+	while (!elemPrioridad->EstaVacia())
+	{
+		p =  elemPrioridad->GetMinPrioridad();
+		e = BorrarMin();
+		
+		Insertar(e, p);
+	}	
+}
+
+
+template <class T>
+void ColaPrioridadAcotada<T>::SetComparadorTipo(const Comparador<T> compTipo)
+{
+	_comp_tipo = compTipo;
+}
+
+template <class T>
+nat ColaPrioridadAcotada<T>::GetMinPrioridad()
+{
+	return _pqueue[1]->GetPrioridad();
+}
 #endif

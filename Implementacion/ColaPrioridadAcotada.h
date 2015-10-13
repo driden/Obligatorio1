@@ -13,6 +13,7 @@ private:
 	Array<Puntero<NodoCP<T>>> _pqueue;
 	nat _tope;
 	Comparador<nat> _comp;
+	Comparador<T> _comp_tipo;
 
 public:
 	~ColaPrioridadAcotada() {}
@@ -26,6 +27,12 @@ public:
 	nat Tamanio() override;
 
 	bool EstaVacia() override;
+
+	void ActualizarPrioridad(const T elem, nat nuevaPrioridad) override;
+
+	void SetComparadorTipo(const Comparador<T> compTipo);
+
+	nat GetMinPrioridad() override;
 };
 
 #endif

@@ -16,5 +16,8 @@ class ColaPrioridad abstract
 	virtual nat Tamanio() abstract;
 
 	virtual bool EstaVacia() abstract;
+	
+	virtual void ActualizarPrioridad(const T elem, nat nuevaPrioridad) abstract;
 
+	virtual nat GetMinPrioridad() abstract;
 };

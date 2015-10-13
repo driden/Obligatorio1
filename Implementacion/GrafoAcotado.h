@@ -5,6 +5,7 @@
 #include "Set.h"
 #include "Puntero.h"
 #include "Array.h"
+#include "ColaPrioridad.h"
 
 template<class T>
 class GrafoAcotado : public Grafo<T>
@@ -19,7 +20,7 @@ class GrafoAcotado : public Grafo<T>
 
 	bool InsertarArista(T& origen, T& destino, nat peso) override;
 
-	nat AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Array<nat> costo, Array<int> anterior);
+	nat AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Array<nat> costo, Array<int> anterior, Puntero<ColaPrioridad<nat>> pq);
 	void ImprimirCaminoMasCorto(nat v_origen, nat v_destino, Array<int> anterior);
 	bool HayCamino(nat v_origen, nat v_destino, Array<int> anterior);
 	bool CaminoMasCorto(T& origen, T&destino) override; //Dijkstra

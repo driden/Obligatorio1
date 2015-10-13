@@ -44,7 +44,7 @@ bool GrafoAcotado<T>::InsertarArista(T& origen, T& destino, nat peso)
 }
 
 template <class T>
-nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Array<nat> costo, Array<int> anterior)
+nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Array<nat> costo, Array<int> anterior, Puntero<ColaPrioridad<nat>> pq)
 {
 	nat menorCosto = INT_MAX;
 	nat menorPosicion = INT_MAX;
@@ -54,19 +54,26 @@ nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Ar
 		//salteo los ciclos
 		if (previo == i)
 			continue;
+
 		//si hay arista
 		nat pesoArista = _matrizAdyacencia[previo][i];
+		//solo adyacentes tienen peso > 0
 		if (pesoArista > 0)
 		{
-			//le marco el anterior
+			costo[i] = costo[previo] + pesoArista;
 			anterior[i] = previo;
 			//busco el vertice de menor costo
-			costo[i] = costo[previo] + pesoArista;
-
-			if (!conocido[i] && (pesoArista + costo[previo]) < menorCosto)
-			{
+			if (!conocido[i])
+			{			
+				pq->Insertar(i, costo[i]);
+			}
+			else if (conocido[i] && (pesoArista + costo[previo]) < menorCosto)
+			{				
 				menorCosto = costo[i];
 				menorPosicion = i;
+				//borro el vertice i de la cola y 
+				//lo vuelvo a ingresar con prioridad
+				pq->ActualizarPrioridad(i, menorCosto);
 			}
 		}
 	}
@@ -104,19 +111,23 @@ bool GrafoAcotado<T>::CaminoMasCorto(T& origen, T& destino)
 	Array<nat> costo = Array<nat>(_vertices.Largo, INT_MAX);
 	Array<int> anterior = Array<int>(_vertices.Largo, -1);
 
+
+	Comparador<nat> comp = new ComparadorNat();
+	Puntero<ColaPrioridad<nat>> pq = new ColaPrioridadAcotada<nat>(_vertices.Largo);
+
+	//vertice, peso
+	pq->Insertar(vOrigen, 0);
 	//arranco con el elemento que me interesa y esta en el origen
 	conocido[vOrigen] = true;
 	costo[vOrigen] = 0;
 
-	nat previo = vOrigen;
-	//busco el vertice adyacente con menor costo
-	while (ady != INT_MAX)
+	nat verticeActual;
+	while (!pq->EstaVacia())
 	{
-		ady = AdyacenteConMenorCosto(previo, conocido, costo, anterior);
-		if (ady != INT_MAX)
-		{
-			previo = ady;
-		}
+		verticeActual = pq->BorrarMin();
+		conocido[verticeActual] = true;
+		AdyacenteConMenorCosto(verticeActual, conocido, costo, anterior, pq);
+
 	}
 	if (HayCamino(vOrigen, vDestino, anterior))
 	{

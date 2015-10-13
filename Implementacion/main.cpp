@@ -167,9 +167,8 @@ void main()
 	//retornoDiferencia->Imprimir();
 
 	Comparador<Cadena> comparadorCadena = new ComparadorCadena();
-	Puntero<Set<Cadena>> vertices = new SetAcotado<Cadena>(8, comparadorCadena);
+	Puntero<Set<Cadena>> vertices = new SetAcotado<Cadena>(7, comparadorCadena);
 
-	vertices->Insertar("Cero");
 	vertices->Insertar("Uno");
 	vertices->Insertar("Dos");
 	vertices->Insertar("Tres");
@@ -188,16 +187,17 @@ void main()
 	Cadena seis = Cadena("Seis");
 	Cadena siete = Cadena("Siete");
 
-	grafo->InsertarArista(cero, uno, 4);
-	grafo->InsertarArista(cero, tres,5 );
-	grafo->InsertarArista(dos, uno, 2);
-	grafo->InsertarArista(dos, cuatro, 8);
-	grafo->InsertarArista(dos, cinco, 3);
-	grafo->InsertarArista(cuatro, seis, 1);
-	grafo->InsertarArista(cinco, tres, 1);
-	grafo->InsertarArista(seis, cuatro, 1);
-	grafo->InsertarArista(siete, seis, 9);
+	grafo->InsertarArista(uno, dos, 2);
+	grafo->InsertarArista(uno, cuatro,1 );
+	grafo->InsertarArista(dos, cuatro, 3);
+	grafo->InsertarArista(dos, cinco, 10);
+	grafo->InsertarArista(tres, uno, 4);
+	grafo->InsertarArista(tres, seis, 5);
+	grafo->InsertarArista(cuatro, seis, 8);
+	grafo->InsertarArista(cuatro, siete, 4);
+	grafo->InsertarArista(cinco, siete, 6);
+	grafo->InsertarArista(siete, seis, 1);
 
-	grafo->CaminoMasCorto(dos, seis);
+	grafo->CaminoMasCorto(uno, siete);
 	system("pause");
 }
