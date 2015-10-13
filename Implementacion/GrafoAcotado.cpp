@@ -44,7 +44,7 @@ bool GrafoAcotado<T>::InsertarArista(T& origen, T& destino, nat peso)
 }
 
 template <class T>
-nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Array<nat> costo, Array<int> anterior, Puntero<ColaPrioridad<nat>> pq)
+nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat v_buscoAdyacencias, Array<bool> conocido, Array<nat> costo, Array<int> anterior, Puntero<ColaPrioridad<nat>> pq)
 {
 	nat menorCosto = INT_MAX;
 	nat menorPosicion = INT_MAX;
@@ -52,29 +52,29 @@ nat GrafoAcotado<T>::AdyacenteConMenorCosto(nat previo, Array<bool> conocido, Ar
 	for (nat i = 0; i < _vertices.ObtenerLargo(); i++)
 	{
 		//salteo los ciclos
-		if (previo == i)
+		if (v_buscoAdyacencias == i)
 			continue;
 
 		//si hay arista
-		nat pesoArista = _matrizAdyacencia[previo][i];
+		nat pesoArista = _matrizAdyacencia[v_buscoAdyacencias][i];
 		//solo adyacentes tienen peso > 0
 		if (pesoArista > 0)
 		{
-			costo[i] = costo[previo] + pesoArista;
-			anterior[i] = previo;
-			//busco el vertice de menor costo
+			//agrego los vertices a una cola segun su costo
+			//si el vertice es conocido no hago nada pq ya esta en el path
 			if (!conocido[i])
 			{			
+				costo[i] = costo[v_buscoAdyacencias] + pesoArista;
 				pq->Insertar(i, costo[i]);
-			}
-			else if (conocido[i] && (pesoArista + costo[previo]) < menorCosto)
-			{		
-				
-				menorCosto = costo[i];
-				menorPosicion = i;
-				//borro el vertice i de la cola y 
-				//lo vuelvo a ingresar con prioridad
-				pq->ActualizarPrioridad(i, menorCosto);
+				if (pesoArista + costo[v_buscoAdyacencias] < menorCosto)
+				{
+					anterior[i] = v_buscoAdyacencias;
+					menorCosto = costo[i];
+					menorPosicion = i;
+					//borro el vertice i de la cola y 
+					//lo vuelvo a ingresar con prioridad
+					pq->ActualizarPrioridad(i, menorCosto);
+				}
 			}
 		}
 	}
@@ -119,14 +119,13 @@ bool GrafoAcotado<T>::CaminoMasCorto(T& origen, T& destino)
 	//arranco con el elemento que me interesa y esta en el origen
 	conocido[vOrigen] = true;
 	costo[vOrigen] = 0;
-	nat v_anterior = vOrigen;
+	anterior[vOrigen] = vOrigen;
+
 	nat verticeActual;
 	while (!pq->EstaVacia())
 	{
 		verticeActual = pq->BorrarMin();
 		conocido[verticeActual] = true;
-		anterior[verticeActual] = v_anterior;
-		v_anterior = verticeActual;
 		AdyacenteConMenorCosto(verticeActual, conocido, costo, anterior, pq);
 
 	}
