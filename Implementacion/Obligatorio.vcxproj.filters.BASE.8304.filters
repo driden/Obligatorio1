@@ -111,9 +111,6 @@
     <ClCompile Include="ColaDinamica.cpp">
       <Filter>Implementacion\TADS\Cola</Filter>
     </ClCompile>
-    <ClCompile Include="ComparadorBarrioNombre.cpp">
-      <Filter>Implementacion\TADS\Comparadores</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CasoDePrueba.h">
@@ -208,12 +205,6 @@
     </ClInclude>
     <ClInclude Include="ColaDinamica.h">
       <Filter>Implementacion\TADS\Cola</Filter>
-    </ClInclude>
-    <ClInclude Include="NodoBarrioClientes.h">
-      <Filter>Implementacion\Dominio\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="ComparadorBarrioNombre.h">
-      <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

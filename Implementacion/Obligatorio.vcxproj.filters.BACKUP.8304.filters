@@ -111,7 +111,11 @@
     <ClCompile Include="ColaDinamica.cpp">
       <Filter>Implementacion\TADS\Cola</Filter>
     </ClCompile>
-    <ClCompile Include="ComparadorBarrioNombre.cpp">
+<<<<<<< HEAD
+    <ClCompile Include="ComparadorBarrio.cpp">
+=======
+    <ClCompile Include="ComparadorClienteCI.cpp">
+>>>>>>> 3f9fa044c3fe5fd4e41475719230ab7479264ac4
       <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClCompile>
   </ItemGroup>
@@ -209,10 +213,14 @@
     <ClInclude Include="ColaDinamica.h">
       <Filter>Implementacion\TADS\Cola</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="NodoBarrioClientes.h">
       <Filter>Implementacion\Dominio\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="ComparadorBarrioNombre.h">
+    <ClInclude Include="ComparadorBarrio.h">
+=======
+    <ClInclude Include="ComparadorClienteCI.h">
+>>>>>>> 3f9fa044c3fe5fd4e41475719230ab7479264ac4
       <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClInclude>
   </ItemGroup>
