@@ -29,7 +29,7 @@ void AVLImp<T>::Insertar(const T &x) {
 }
 
 template<class T>
-void AVLImp<T> ::Insertar(const T &x, const Puntero<Comparador<T>> &cmp, Puntero<NodoAVL<T>> &root)
+void AVLImp<T> ::Insertar(const T &x, const Comparador<T> &cmp, Puntero<NodoAVL<T>> &root)
 {
 	if (root == NULL)
 	{
@@ -39,12 +39,12 @@ void AVLImp<T> ::Insertar(const T &x, const Puntero<Comparador<T>> &cmp, Puntero
 		root->SetDer(NULL);
 		root->SetHeight(0);
 	}
-	else if (cmp->EsMenor(x, root->GetDato()))
+	else if (cmp.EsMenor(x, root->GetDato()))
 	{
 		Insertar(x, cmp, root->GetIzq());
 		if (GetHeight(root->GetIzq()) - GetHeight(root->GetDer()) == 2)
 		{
-			if (cmp->EsMenor(x, root->GetIzq()->GetDato()))
+			if (cmp.EsMenor(x, root->GetIzq()->GetDato()))
 			{
 				RotacionSimpleIzq(root);
 			}
@@ -54,12 +54,12 @@ void AVLImp<T> ::Insertar(const T &x, const Puntero<Comparador<T>> &cmp, Puntero
 			}
 		}
 	}
-	else if (cmp->EsMayor(x, root->GetDato()))
+	else if (cmp.EsMayor(x, root->GetDato()))
 	{
 		Insertar(x, cmp, root->GetDer());
 		if (GetHeight(root->GetIzq()) - GetHeight(root->GetDer()) == 2)
 		{
-			if (cmp->EsMenor(x, root->GetDer()->GetDato()))
+			if (cmp.EsMenor(x, root->GetDer()->GetDato()))
 			{
 				RotacionSimpleDer(root);
 			}
@@ -125,11 +125,31 @@ int AVLImp<T>::GetHeight(Puntero<NodoAVL<T>> nodo) const {
 }
 
 template <class T>
-Puntero<Comparador<T>> AVLImp<T>::GetComparador() const {
+Comparador<T> AVLImp<T>::GetComparador() const {
 	return _comparador;
 }
+
 template <class T>
-void AVLImp<T>::SetComparador(const Puntero<Comparador<T>> &cmp) {
+nat AVLImp<T>::Contar()
+{
+	return Contar(_root);
+}
+
+template <class T>
+nat AVLImp<T>::Contar(Puntero<NodoAVL<T>> tree)
+{
+	
+	if (tree == nullptr)
+	{
+		return 0;
+	} else
+	{	
+		return  1 + Contar(tree->GetDer()) + Contar(tree->GetIzq());
+	}
+}
+
+template <class T>
+void AVLImp<T>::SetComparador(const Comparador<T> &cmp) {
 	_comparador = cmp;
 }
 /**** Predicado ****/
@@ -144,28 +164,27 @@ const T& AVLImp<T>::Raiz() const {
 	return _root->GetDato();
 }
 
-template<class T>
-const T& AVLImp<T>::Maximo() const {
-	Maximo(_root);
-}
-//const T& GetDato() const;
-//Puntero<NodoAVL<T>>& GetIzq();
-//Puntero<NodoAVL<T>>& GetDer();
-template<class T>
-const T& AVLImp<T>::Maximo(const Puntero<NodoAVL<T>> avl) const{
+//template<class T>
+//const T& AVLImp<T>::Maximo() const {
+//	return Maximo(_root);
+//}
 
-	if ((avl != NULL) && (avl->GetDer() != NULL)) {
-		return avl->GetDato();
-	}
-	else if (avl != NULL) {
-		return Maximo(avl->GetDer());
-	}
-}
+//template<class T>
+//const T& AVLImp<T>::Maximo(Puntero<NodoAVL<T>> avl) const{
+//
+//	
+//	if ((avl != NULL) && (avl->GetDer() != NULL)) {
+//		return avl->GetDato();
+//	}
+//	 if (avl != NULL) {
+//		return Maximo(avl->GetDer());
+//	}
+//}
 
-template<class T>
-const T& AVLImp<T>::Minimo() const {
-	return Raiz();
-}
+//template<class T>
+//const T& AVLImp<T>::Minimo() const {
+//	return Raiz();
+//}
 
 template<class T>
 bool AVLImp<T>::Existe(const T &x) const {
@@ -178,24 +197,5 @@ void AVLImp<T>::Borrar(const T &x) {}
 template<class T>
 const T& AVLImp<T>::Recuperar(const T&) const {
 	return Raiz();
-}
-
-
-template<class T>
-void AVLImp<T>::Imprimir() {
-	postorder(_root);
-}
-
-template <class T>
-void AVLImp<T>::postorder(Puntero<NodoAVL<T>> p, int indent = 0)
-{
-	if (p != NULL) {
-		if (p->GetIzq()) postorder(p->GetIzq(), indent + 4);
-		if (p->GetDer()) postorder(p->GetDer(), indent + 4);
-		if (indent) {
-			std::cout << std::setw(indent) << ' ';
-		}
-		cout << p->GetDato() << "\n ";
-	}
 }
 #endif // !AVLIMP_CPP

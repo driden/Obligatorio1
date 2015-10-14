@@ -11,6 +11,16 @@ class Cliente : public ICliente
 	Cadena _direccion;
 
 	public:
+		~Cliente(){}
+		Cliente(){}
+		Cliente(nat ci, nat fechaRegistro, Cadena nombre, Cadena nombreBarrio, Cadena direccion)
+		{
+			_ci = ci;
+			_fechaRegistro = fechaRegistro;
+			_nombre = nombre;
+			_nombreBarrio = nombreBarrio;
+			_direccion = direccion;
+		}
 	nat ObtenerCiCliente() const override;
 	Cadena ObtenerNombreCliente() const override;
 	nat ObtenerFechaRegCliente() const override;

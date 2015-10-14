@@ -2,6 +2,11 @@
 #define NODOAVL_CPP
 #include "NodoAVL.h"
 
+template <class T>
+NodoAVL<T>::NodoAVL()
+{
+}
+
 //Getters
 template <class T>
 const T& NodoAVL<T>::GetDato() const{

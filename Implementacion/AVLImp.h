@@ -5,18 +5,19 @@
 #include "AVL.h"
 #include "NodoAVL.h"
 
+typedef unsigned int nat;
 template <class T>
 class AVLImp : public AVL<T>
 {
 private:
 	Puntero<NodoAVL<T>> _root;
-	Puntero<Comparador<T>> _comparador;
+	Comparador<T> _comparador;
 public:
 	/**** Constructoras ****/
 	AVLImp<T>(){
 		_root = NULL;
 	};
-	AVLImp<T>(const Puntero<Comparador<T>> cmp){
+	AVLImp<T>(const Comparador<T> cmp){
 		_root = NULL;
 		_comparador = cmp;
 	}
@@ -33,14 +34,7 @@ public:
 	/* pre : el árbol no es vacío
 	* post: retorna la raíz del árbol */
 	const T& Raiz() const;
-	/* pre : el árbol no es vacío
-	* post: retorna el máximo elemento del AVL */
-	const T& Maximo() const;
-	const T& Maximo(const Puntero<NodoAVL<T>> avl) const;
-	/* pre : el árbol no es vacío
-	* post: retorna el mínimo elemento del AVL */
-	const T& Minimo() const;
-	// retorna true si x está en el árbol
+		// retorna true si x está en el árbol
 	bool Existe(const T &x) const;
 	/* pre: no posee (la asumimos total)
 	* post: retorna el AVL del que se ha borrado el elemento con clave x (si está). */
@@ -49,17 +43,18 @@ public:
 	* post: retorna el elemento */
 	const T& Recuperar(const T&) const;
 	//Funciones extra
-	void Insertar(const T &x, const Puntero<Comparador<T>> &cmp, Puntero<NodoAVL<T>> &root);
+	void Insertar(const T &x, const Comparador<T> &cmp, Puntero<NodoAVL<T>> &root);
 	void RotacionSimpleIzq(Puntero<NodoAVL<T>> &root);
 	void RotacionSimpleDer(Puntero<NodoAVL<T>> &root);
 	void RotacionDobleIzq(Puntero <NodoAVL<T>> &root);
 	void RotacionDobleDer(Puntero <NodoAVL<T>> &root);
 	int GetHeight(Puntero<NodoAVL<T>> nodo) const;
 
-	void SetComparador(const Puntero<Comparador<T>> &cmp);
-	Puntero<Comparador<T>> GetComparador() const;
-	virtual void Imprimir();
-	void postorder(Puntero<NodoAVL<T>> p, int indent = 0);
+	void SetComparador(const Comparador<T> &cmp);
+	Comparador<T> GetComparador() const;
+
+	nat Contar() override;
+	nat Contar(Puntero<NodoAVL<T>> tree) ;
 };
 #include "AVLImp.cpp"
 #endif

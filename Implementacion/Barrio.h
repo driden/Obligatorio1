@@ -10,6 +10,7 @@ class Barrio : public IBarrio
 	Iterador<pCliente> _iterClientesDireccion;
 
 	public:
+		Barrio(){}
 	Barrio(Cadena nombre, nat cantidadCamaras, nat promedioHurtos, Iterador<pCliente> iterClientesDireccion)
 	{
 		_nombre = nombre;

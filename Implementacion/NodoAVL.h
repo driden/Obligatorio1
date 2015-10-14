@@ -14,7 +14,8 @@ private:
 	int _height;
 
 public:
-
+	//~NodoAVL(){};
+	NodoAVL();
 	//Getters
 	const T& GetDato() const;
 	Puntero<NodoAVL<T>>& GetIzq();

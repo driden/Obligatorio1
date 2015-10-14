@@ -1,29 +1,32 @@
 ﻿#include "Sistema.h"
-#include "HashImp.h"
+
 #include "AVLImp.h"
-#include "NodoBarrioClientes.h"
+#include "ComparadorNodoBarrioClientes.h"
+#include "CadenaFuncionHash.h"
+#include "ComparadorClienteCI.h"
+#include "NaturalFuncionHash.h"
 
 Sistema::Sistema(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
+	Comparador<NodoBarrioClientes> cmpNBC = new ComparadorNodoBarrioClientes();
+	_avlBarrioClientes = new AVLImp<NodoBarrioClientes>(cmpNBC);
+	
+	_hashClientes = 
+		new HashImp<nat, Cliente>(MAX_CLIENTES, new NaturalFuncionHash(), new ComparadorClienteCI());
 
-
+	_hashBarrios =
+		new HashImp<Cadena, Barrio>(MAX_BARRIOS, new CadenaFuncionHash(), new ComparadorBarrioNombre());
 }
 
 // Tipo 1
 
 TipoRetorno Sistema::IngresoBarrio(Cadena nombreBarrio, nat cantidadCamaras, nat promedioHurtos)
 {
-	Puntero<AVL<NodoBarriolClientes>> barrioCliente;
+	/*TipoRetorno retorno;
+	if (_avlBarrioClientes->)
+	return retorno;*/
 
-
-	return OK;
-
-	else
-	{
-		if (barrios->GetComparador()->SonIguales(barrios->Get,nombreBarrio))
-		return ERROR;
-
-	}
+	return NO_IMPLEMENTADA;
 }
 
 TipoRetorno Sistema::IngresoCliente(nat ciCliente, Cadena nombreCliente, nat fechaRegCliente, Cadena nombreBarrio, Cadena direccion)
