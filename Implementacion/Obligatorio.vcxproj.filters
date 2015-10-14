@@ -112,6 +112,7 @@
       <Filter>Implementacion\TADS\Cola</Filter>
     </ClCompile>
     <ClCompile Include="ComparadorBarrioNombre.cpp">
+    <ClCompile Include="ComparadorClienteCI.cpp">
       <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClCompile>
   </ItemGroup>
