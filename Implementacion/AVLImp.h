@@ -41,7 +41,7 @@ public:
 	void Borrar(const T &x);
 	/* pre : el elemento está presente en el árbol
 	* post: retorna el elemento */
-	const T& Recuperar(const T&) const;
+	const Puntero<NodoAVL<T>>& Recuperar(const T&) const;
 	//Funciones extra
 	void Insertar(const T &x, const Comparador<T> &cmp, Puntero<NodoAVL<T>> &root);
 	void RotacionSimpleIzq(Puntero<NodoAVL<T>> &root);
@@ -52,9 +52,13 @@ public:
 
 	void SetComparador(const Comparador<T> &cmp);
 	Comparador<T> GetComparador() const;
-
+	
 	nat Contar() override;
 	nat Contar(Puntero<NodoAVL<T>> tree) ;
+	
+	T& Recuperar(const T &x, const Puntero<NodoAVL<T>>);
+
+	Iterador<T> ObtenerIterador() const override;
 };
 #include "AVLImp.cpp"
 #endif

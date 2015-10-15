@@ -46,7 +46,7 @@
     <Filter Include="Implementacion\TADS\Grafo">
       <UniqueIdentifier>{dc861dff-9bb7-4f4c-9f81-1dd9929d87fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Implementacion\TADS\AVL\Cola">
+    <Filter Include="Implementacion\TADS\Cola">
       <UniqueIdentifier>{5dd3d6a7-1b5e-4041-97ad-7fd83e3a9788}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -109,7 +109,7 @@
       <Filter>Implementacion\TADS\Grafo</Filter>
     </ClCompile>
     <ClCompile Include="ColaDinamica.cpp">
-      <Filter>Implementacion\TADS\AVL\Cola</Filter>
+      <Filter>Implementacion\TADS\Cola</Filter>
     </ClCompile>
     <ClCompile Include="ComparadorClienteCI.cpp">
       <Filter>Implementacion\TADS\Comparadores</Filter>
@@ -117,11 +117,8 @@
     <ClCompile Include="ComparadorBarrioNombre.cpp">
       <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClCompile>
-    <ClCompile Include="ComparadorNodoBarrioClientes.cpp">
-      <Filter>Implementacion\TADS\Comparadores</Filter>
-    </ClCompile>
-    <ClCompile Include="NodoBarrioClientes.cpp">
-      <Filter>Implementacion\Dominio\Headers</Filter>
+    <ClCompile Include="AVLIteracion.cpp">
+      <Filter>Implementacion\TADS\AVL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -213,10 +210,10 @@
       <Filter>Implementacion\TADS\Grafo</Filter>
     </ClInclude>
     <ClInclude Include="Cola.h">
-      <Filter>Implementacion\TADS\AVL\Cola</Filter>
+      <Filter>Implementacion\TADS\Cola</Filter>
     </ClInclude>
     <ClInclude Include="ColaDinamica.h">
-      <Filter>Implementacion\TADS\AVL\Cola</Filter>
+      <Filter>Implementacion\TADS\Cola</Filter>
     </ClInclude>
     <ClInclude Include="ComparadorClienteCI.h">
       <Filter>Implementacion\TADS\Comparadores</Filter>
@@ -224,11 +221,8 @@
     <ClInclude Include="ComparadorBarrioNombre.h">
       <Filter>Implementacion\TADS\Comparadores</Filter>
     </ClInclude>
-    <ClInclude Include="NodoBarrioClientes.h">
-      <Filter>Implementacion\Dominio\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="ComparadorNodoBarrioClientes.h">
-      <Filter>Implementacion\TADS\Comparadores</Filter>
+    <ClInclude Include="AVLIteracion.h">
+      <Filter>Implementacion\TADS\AVL</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

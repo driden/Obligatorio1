@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Barrio.h"
+#include "AVLIteracion.h"
 
 Cadena Barrio::ObtenerNombreBarrio() const
 {
@@ -21,4 +22,9 @@ Iterador<pCliente> Barrio::ObtenerClientesPorDireccion() const
 bool Barrio::operator==(const IBarrio& b) const
 {
 	return this->_nombre == b.ObtenerNombreBarrio();
+}
+
+Iterador<Cliente> Barrio::IteradorClientesCI() const
+{
+	return new AVLIteracion<Cliente>(_avlClientes);
 }

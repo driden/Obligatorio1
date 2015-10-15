@@ -1,10 +1,11 @@
 #ifndef AVL_H
 #define AVL_H
 
-//#include "Iterable.h"
+#include "Iterable.h"
 typedef unsigned int nat;
+
 template <class T>
-class AVL // :public  Iterable<T> 
+class AVL :public  Iterable<T> 
 {
 public:
 
@@ -29,10 +30,11 @@ public:
 	/* pre: no posee (la asumimos total)
  	 * post: retorna el AVL del que se ha borrado el elemento con clave x (si está). */
 	virtual void Borrar (const T &x) abstract;
-	/* pre : el elemento está presente en el árbol
-     * post: retorna el elemento */
-	virtual const T& Recuperar(const T&) const abstract;	
+
+	//virtual Puntero<T> Recuperar(const T &x) abstract;
 
 	virtual nat Contar() abstract;
+	
+	virtual Iterador<T> ObtenerIterador() const override abstract;
 };
 #endif

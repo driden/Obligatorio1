@@ -4,6 +4,7 @@
 #include <algorithm> //max
 #include <iomanip>   
 #include "AVLImp.h"
+#include "AVLIteracion.h"
 
 
 using namespace std;
@@ -17,7 +18,6 @@ template <class T>
 void AVLImp<T>::Insertar(const T &x) {
 	if (_root != NULL) {
 		Insertar(x, _comparador, _root);
-
 	}
 	else {
 		_root = new NodoAVL<T>();
@@ -50,7 +50,7 @@ void AVLImp<T> ::Insertar(const T &x, const Comparador<T> &cmp, Puntero<NodoAVL<
 			}
 			else
 			{
-				RotacionDobleIzq(root);
+				RotacionDobleIzq(root);				
 			}
 		}
 	}
@@ -149,6 +149,28 @@ nat AVLImp<T>::Contar(Puntero<NodoAVL<T>> tree)
 }
 
 template <class T>
+T& AVLImp<T>::Recuperar(const T& x, const Puntero<NodoAVL<T>> tree)
+{
+	if (_comparador.EsMayor(x, tree->GetDato()))
+	{
+		return Recuperar(x, tree->GetDer());
+
+	} else if (_comparador.EsMenor(x, tree->GetDato()))
+	{
+		return Recuperar(x, tree->GetIzq());
+	} else
+	{
+		return tree->GetDato();
+	}
+}
+
+template <class T>
+Iterador<T> AVLImp<T>::ObtenerIterador() const
+{
+	return new AVLIteracion<T>(_root);
+}
+
+template <class T>
 void AVLImp<T>::SetComparador(const Comparador<T> &cmp) {
 	_comparador = cmp;
 }
@@ -164,28 +186,6 @@ const T& AVLImp<T>::Raiz() const {
 	return _root->GetDato();
 }
 
-//template<class T>
-//const T& AVLImp<T>::Maximo() const {
-//	return Maximo(_root);
-//}
-
-//template<class T>
-//const T& AVLImp<T>::Maximo(Puntero<NodoAVL<T>> avl) const{
-//
-//	
-//	if ((avl != NULL) && (avl->GetDer() != NULL)) {
-//		return avl->GetDato();
-//	}
-//	 if (avl != NULL) {
-//		return Maximo(avl->GetDer());
-//	}
-//}
-
-//template<class T>
-//const T& AVLImp<T>::Minimo() const {
-//	return Raiz();
-//}
-
 template<class T>
 bool AVLImp<T>::Existe(const T &x) const {
 	return true;
@@ -194,8 +194,4 @@ bool AVLImp<T>::Existe(const T &x) const {
 template<class T>
 void AVLImp<T>::Borrar(const T &x) {}
 
-template<class T>
-const T& AVLImp<T>::Recuperar(const T&) const {
-	return Raiz();
-}
 #endif // !AVLIMP_CPP

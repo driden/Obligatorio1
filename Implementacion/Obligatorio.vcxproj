@@ -96,6 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AVLImp.cpp" />
+    <ClCompile Include="AVLIteracion.cpp" />
     <ClCompile Include="Barrio.cpp" />
     <ClCompile Include="CasoDePrueba.cpp" />
     <ClCompile Include="Cliente.cpp" />
@@ -106,13 +107,11 @@
     <ClCompile Include="ComparadorClienteCI.cpp" />
     <ClCompile Include="ComparadorInt.cpp" />
     <ClCompile Include="ComparadorNat.cpp" />
-    <ClCompile Include="ComparadorNodoBarrioClientes.cpp" />
     <ClCompile Include="GrafoAcotado.cpp" />
     <ClCompile Include="HashImp.cpp" />
     <ClCompile Include="ListaEnlazada.cpp" />
     <ClCompile Include="ListaIteracion.cpp" />
     <ClCompile Include="NodoAVL.cpp" />
-    <ClCompile Include="NodoBarrioClientes.cpp" />
     <ClCompile Include="NodoCP.cpp" />
     <ClCompile Include="NodoLista.cpp" />
     <ClCompile Include="PruebasMock.cpp" />
@@ -123,6 +122,7 @@
   <ItemGroup>
     <ClInclude Include="AVL.h" />
     <ClInclude Include="AVLImp.h" />
+    <ClInclude Include="AVLIteracion.h" />
     <ClInclude Include="Barrio.h" />
     <ClInclude Include="CasoDePrueba.h" />
     <ClInclude Include="Cliente.h" />
@@ -135,7 +135,6 @@
     <ClInclude Include="ComparadorClienteCI.h" />
     <ClInclude Include="ComparadorInt.h" />
     <ClInclude Include="ComparadorNat.h" />
-    <ClInclude Include="ComparadorNodoBarrioClientes.h" />
     <ClInclude Include="Grafo.h" />
     <ClInclude Include="GrafoAcotado.h" />
     <ClInclude Include="HashImp.h" />
@@ -143,7 +142,6 @@
     <ClInclude Include="ListaEnlazada.h" />
     <ClInclude Include="ListaIteracion.h" />
     <ClInclude Include="NodoAVL.h" />
-    <ClInclude Include="NodoBarrioClientes.h" />
     <ClInclude Include="NodoCP.h" />
     <ClInclude Include="NodoLista.h" />
     <ClInclude Include="PruebasMock.h" />

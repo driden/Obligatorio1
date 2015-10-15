@@ -2,16 +2,18 @@
 #define SISTEMA_H
 
 #include "ISistema.h"
-#include "NodoBarrioClientes.h"
 #include "HashImp.h"
+#include "Barrio.h"
 
 class Sistema : public ISistema
 {
 private:
-	Comparador<NodoBarrioClientes> cmpNBC;
-	Puntero<AVL<NodoBarrioClientes>> _avlBarrioClientes;
+	Comparador<Barrio> cmpNBC;
+	Puntero<AVL<Barrio>> _avlBarrioClientes;
 	Puntero<TablaHash<nat, Cliente>> _hashClientes;
 	Puntero<TablaHash<Cadena, Barrio>> _hashBarrios;
+	nat _maxBarrios, _maxClientes;
+	
 public:
 	Sistema(nat MAX_BARRIOS, nat MAX_CLIENTES);
 

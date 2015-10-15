@@ -1,15 +1,19 @@
 ﻿#include "Sistema.h"
 
 #include "AVLImp.h"
-#include "ComparadorNodoBarrioClientes.h"
 #include "CadenaFuncionHash.h"
 #include "ComparadorClienteCI.h"
 #include "NaturalFuncionHash.h"
+#include "ComparadorBarrioNombre.h"
+
 
 Sistema::Sistema(nat MAX_BARRIOS, nat MAX_CLIENTES)
 {
-	Comparador<NodoBarrioClientes> cmpNBC = new ComparadorNodoBarrioClientes();
-	_avlBarrioClientes = new AVLImp<NodoBarrioClientes>(cmpNBC);
+	_maxBarrios = MAX_BARRIOS;
+	_maxClientes = MAX_CLIENTES;
+
+	Comparador<Barrio> cmpNBC = new ComparadorBarrioNombre();
+	_avlBarrioClientes = new AVLImp<Barrio>(cmpNBC);
 	
 	_hashClientes = 
 		new HashImp<nat, Cliente>(MAX_CLIENTES, new NaturalFuncionHash(), new ComparadorClienteCI());
@@ -22,15 +26,36 @@ Sistema::Sistema(nat MAX_BARRIOS, nat MAX_CLIENTES)
 
 TipoRetorno Sistema::IngresoBarrio(Cadena nombreBarrio, nat cantidadCamaras, nat promedioHurtos)
 {
-	/*TipoRetorno retorno;
-	if (_avlBarrioClientes->)
-	return retorno;*/
-
-	return NO_IMPLEMENTADA;
+	TipoRetorno retorno;
+	Barrio b (nombreBarrio, cantidadCamaras, promedioHurtos);
+	
+	if (_avlBarrioClientes->Contar() == _maxBarrios || _avlBarrioClientes->Existe(b))
+		retorno = ERROR;
+	else
+	{
+		_avlBarrioClientes->Insertar(b);
+		retorno = OK;
+	}
+	return retorno;	
 }
 
 TipoRetorno Sistema::IngresoCliente(nat ciCliente, Cadena nombreCliente, nat fechaRegCliente, Cadena nombreBarrio, Cadena direccion)
 {
+	TipoRetorno ret;
+	Barrio b(nombreBarrio, 0, 0);
+
+	if (!_avlBarrioClientes->Existe(b))
+	{
+		ret = ERROR;
+	} else
+	{
+		//traigo el barrio
+		
+	
+
+		//Iterador<Barrio> itClientes = btree->
+	}
+
 	return NO_IMPLEMENTADA;
 }
 
